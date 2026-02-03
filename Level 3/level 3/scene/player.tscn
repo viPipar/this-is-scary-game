@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://djs42we40krh3"]
+
+[ext_resource type="Texture2D" uid="uid://xfc1jmqlbgim" path="res://level 3/assets/umaru.jpg" id="1_3y0lq"]
+[ext_resource type="Script" uid="uid://b4tm07yea8n83" path="res://level 3/scene/player.gd" id="1_ok53t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok53t"]
+size = Vector2(255, 195)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_ok53t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, -1.19209e-07)
+texture = ExtResource("1_3y0lq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_ok53t")

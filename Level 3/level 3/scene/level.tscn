@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbfek65jaigdl"]
+
+[ext_resource type="Texture2D" uid="uid://fhksswu4thqn" path="res://level 3/assets/background.jpeg" id="1_kqr2j"]
+[ext_resource type="PackedScene" uid="uid://djs42we40krh3" path="res://level 3/scene/player.tscn" id="2_vg2w1"]
+[ext_resource type="Script" uid="uid://vfrevgeywqwp" path="res://level 3/scene/camera_2d.gd" id="2_xf4iq"]
+[ext_resource type="PackedScene" uid="uid://yju3qekuw203" path="res://level 3/scene/enemy.tscn" id="3_i3waq"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(4.21389, 1.04439)
+texture = ExtResource("1_kqr2j")
+
+[node name="enemy" parent="." instance=ExtResource("3_i3waq")]
+position = Vector2(-897, -354)
+player_path = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_vg2w1")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.4, 0.4)
+script = ExtResource("2_xf4iq")

@@ -1,0 +1,23 @@
+extends CharacterBody2D
+
+@export var speed: float = 200.0
+@export var player_path: NodePath
+
+var player: CharacterBody2D
+
+func _ready() -> void:
+	player = get_node(player_path)
+
+func _physics_process(delta: float) -> void:
+	if player == null:
+		return
+
+	var direction = player.global_position - global_position
+
+	if direction.length() > 50:
+		direction = direction.normalized()
+		velocity = direction * speed
+	else:
+		velocity = Vector2.ZERO
+
+	move_and_slide()
