@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxrvh7tc78pgu"
-path.s3tc="res://.godot/imported/istockphoto-865924416-612x612.jpg-2da1c6f523600306617d8defbad9ec16.s3tc.ctex"
+path.s3tc="res://.godot/imported/istockphoto-865924416-612x612.jpg-648720df7ce706498773fdc8201044b9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Level 2/assets/istockphoto-865924416-612x612.jpg"
-dest_files=["res://.godot/imported/istockphoto-865924416-612x612.jpg-2da1c6f523600306617d8defbad9ec16.s3tc.ctex"]
+source_file="res://this-is-scary-game/Level 2/assets/istockphoto-865924416-612x612.jpg"
+dest_files=["res://.godot/imported/istockphoto-865924416-612x612.jpg-648720df7ce706498773fdc8201044b9.s3tc.ctex"]
 
 [params]
 

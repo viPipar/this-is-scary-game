@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnm078ak7b3qg"]
+
+[ext_resource type="Texture2D" uid="uid://qcmsxdcyd07b" path="res://icon.svg" id="1_dgjhq"]
+[ext_resource type="Script" uid="uid://dmx1ya0mxc24t" path="res://this-is-scary-game/Level_5_Crossy/wolf_straight.gd" id="1_hcouq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcouq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dgjhq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5y1v"]
+size = Vector2(124, 123)
+
+[node name="Wolf_Straight" type="CharacterBody2D"]
+script = ExtResource("1_hcouq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hcouq")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_p5y1v")

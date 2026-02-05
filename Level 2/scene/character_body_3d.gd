@@ -20,17 +20,13 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# 2. Handle Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
 	# 3. TRAP LOGIC: Check for fall
 	# If falling fast and not on floor, trigger the camera swap
 	if not is_on_floor() and velocity.y < -2.0 and not has_triggered_trap:
 		trigger_fall_trap()
 
 	# 4. Get Input Direction (Relative to Camera)
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	var direction = Vector3.ZERO
 	
 	# We use the CURRENT camera to determine direction.

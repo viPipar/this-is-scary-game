@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ugqhoqba1wlm"
-path.s3tc="res://.godot/imported/New Project (43).png-294b9223ac2a1ffb8cac97a46a8d3a76.s3tc.ctex"
+uid="uid://xg4mdsx4if70"
+path="res://.godot/imported/banana.png-0bab78d5e4fc7c86dae27dcf0aebba20.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://this-is-scary-game/Level 2/assets/New Project (43).png"
-dest_files=["res://.godot/imported/New Project (43).png-294b9223ac2a1ffb8cac97a46a8d3a76.s3tc.ctex"]
+source_file="res://this-is-scary-game/Level_1_Banana/asset/sprite/banana.png"
+dest_files=["res://.godot/imported/banana.png-0bab78d5e4fc7c86dae27dcf0aebba20.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgag6is8jlers"]
+[gd_scene load_steps=9 format=3 uid="uid://cgag6is8jlers"]
 
 [ext_resource type="Script" uid="uid://bkk5yxbfdcado" path="res://this-is-scary-game/Level_1_Banana/father.gd" id="1_ouscw"]
 [ext_resource type="Texture2D" uid="uid://qcmsxdcyd07b" path="res://icon.svg" id="1_v7ymb"]
+[ext_resource type="Texture2D" uid="uid://rogncsch46l1" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6326-removebg-preview.png" id="3_re75f"]
+[ext_resource type="Texture2D" uid="uid://cdyw8ks448rrm" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6328-removebg-preview.png" id="4_c5ub3"]
+[ext_resource type="Texture2D" uid="uid://c5i4yhl4wq3cl" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6329-removebg-preview.png" id="5_8tcb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6hbr"]
-size = Vector2(121, 121)
+size = Vector2(73, 201)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8gnvp"]
 atlas = ExtResource("1_v7ymb")
@@ -19,15 +22,33 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_re75f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c5ub3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8tcb7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
 }]
 
 [node name="Father" type="CharacterBody2D"]
 script = ExtResource("1_ouscw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -0.5)
+position = Vector2(1.5, -40.5)
 shape = SubResource("RectangleShape2D_a6hbr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, -63)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_qtju1")
-animation = &"idle"
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.510205

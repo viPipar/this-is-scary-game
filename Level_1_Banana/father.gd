@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var mov_speed = 750
-var jump_height = -1200
+var jump_height = -950
 var gravity = 35
 
 func _physics_process(delta: float) -> void:

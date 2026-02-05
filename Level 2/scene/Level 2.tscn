@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://b028pm2i341ra"]
 
-[ext_resource type="Texture2D" uid="uid://cxrvh7tc78pgu" path="res://Level 2/assets/istockphoto-865924416-612x612.jpg" id="1_odmrk"]
-[ext_resource type="Texture2D" uid="uid://206cnqcw3g1" path="res://Level 2/assets/pngtree-illustration-of-ground-hole-png-image_8559985.png" id="2_11hpx"]
-[ext_resource type="Script" uid="uid://cs2olsvxgvh7d" path="res://Level 2/scene/character_body_3d.gd" id="3_sboqp"]
-[ext_resource type="Texture2D" uid="uid://ugqhoqba1wlm" path="res://Level 2/assets/New Project (43).png" id="4_0q22f"]
-[ext_resource type="Script" uid="uid://cpuyvdupk2lpe" path="res://Level 2/scene/camera_3d.gd" id="5_11hpx"]
+[ext_resource type="Texture2D" uid="uid://cxrvh7tc78pgu" path="res://this-is-scary-game/Level 2/assets/istockphoto-865924416-612x612.jpg" id="1_odmrk"]
+[ext_resource type="Texture2D" uid="uid://206cnqcw3g1" path="res://this-is-scary-game/Level 2/assets/pngtree-illustration-of-ground-hole-png-image_8559985.png" id="2_11hpx"]
+[ext_resource type="Script" uid="uid://cs2olsvxgvh7d" path="res://this-is-scary-game/Level 2/scene/character_body_3d.gd" id="3_sboqp"]
+[ext_resource type="Texture2D" uid="uid://ugqhoqba1wlm" path="res://this-is-scary-game/Level 2/assets/New Project (43).png" id="4_0q22f"]
+[ext_resource type="Script" uid="uid://cpuyvdupk2lpe" path="res://this-is-scary-game/Level 2/scene/camera_3d.gd" id="5_11hpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ysd6"]
 shading_mode = 0

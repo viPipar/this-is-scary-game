@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dymc6ap6w6fi4"]
+
+[ext_resource type="Texture2D" uid="uid://qcmsxdcyd07b" path="res://icon.svg" id="1_5ei88"]
+[ext_resource type="Script" uid="uid://bvppupkq3trfv" path="res://this-is-scary-game/Level_5_Crossy/wolf_follow.gd" id="1_eh8vt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eh8vt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5ei88")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe67i"]
+size = Vector2(118, 121)
+
+[node name="Wolf_Follow" type="CharacterBody2D"]
+script = ExtResource("1_eh8vt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eh8vt")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_fe67i")

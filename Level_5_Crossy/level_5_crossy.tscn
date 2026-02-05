@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://1pihhhtmdn35"]
+
+[ext_resource type="PackedScene" uid="uid://cpcnxb024bmhu" path="res://this-is-scary-game/Level_5_Crossy/daughter.tscn" id="1_gkvoc"]
+[ext_resource type="PackedScene" uid="uid://dymc6ap6w6fi4" path="res://this-is-scary-game/Level_5_Crossy/wolf_follow.tscn" id="2_xhqlm"]
+[ext_resource type="PackedScene" uid="uid://dnm078ak7b3qg" path="res://this-is-scary-game/Level_5_Crossy/wolf_straight.tscn" id="3_w4avn"]
+
+[node name="Level5_Crossy" type="Node2D"]
+scale = Vector2(0.8, 0.8)
+
+[node name="Daughter" parent="." instance=ExtResource("1_gkvoc")]
+position = Vector2(896, 679)
+
+[node name="Camera2D" type="Camera2D" parent="Daughter"]
+
+[node name="Wolf_Follow" parent="." instance=ExtResource("2_xhqlm")]
+position = Vector2(737.5, 1377.5)
+
+[node name="Wolf_Follow2" parent="." instance=ExtResource("2_xhqlm")]
+position = Vector2(938.75, 1233.75)
+
+[node name="Wolf_Follow3" parent="." instance=ExtResource("2_xhqlm")]
+position = Vector2(1113.75, 1340)
+
+[node name="Wolf_Straight" parent="." instance=ExtResource("3_w4avn")]
+position = Vector2(90, -1912.5)
+
+[node name="Wolf_Straight2" parent="." instance=ExtResource("3_w4avn")]
+position = Vector2(1577.5, -3470)
+
+[node name="Wolf_Straight3" parent="." instance=ExtResource("3_w4avn")]
+position = Vector2(86.25, -4241.25)
