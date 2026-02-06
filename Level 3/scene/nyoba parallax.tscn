@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmjp5e8dxvokw"]
 
-[ext_resource type="Texture2D" uid="uid://fhksswu4thqn" path="res://Level 3/assets/background.jpeg" id="1_xh85y"]
+[ext_resource type="Texture2D" uid="uid://dsdlpoyq77vg7" path="res://Level 3/assets/303610-P8C3KK-355.png" id="1_xh85y"]
 
 [node name="Node2D" type="ParallaxBackground"]
 
