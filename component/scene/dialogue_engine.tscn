@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://do2cu7bo4b2v4"]
+[gd_scene load_steps=12 format=3 uid="uid://do2cu7bo4b2v4"]
 
 [ext_resource type="Texture2D" uid="uid://c8p18qx84sjbh" path="res://component/assets/dialogue_engine/floor grass.png" id="1_acmd8"]
 [ext_resource type="Script" uid="uid://cmfjulkmy51jc" path="res://component/scene/dialogue_system.gd" id="1_bokd7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://un4biktxfkq6" path="res://component/assets/dialogue_engine/portrait_0002_Mother.png" id="5_fng3k"]
 [ext_resource type="Texture2D" uid="uid://bpbetgx2tmftp" path="res://component/assets/dialogue_engine/portrait_0004_Son.png" id="7_tk1ru"]
 [ext_resource type="Texture2D" uid="uid://cal5n3rvo82m5" path="res://component/assets/dialogue_engine/portrait_0003_Daughter.png" id="8_36lxq"]
+[ext_resource type="Script" uid="uid://dbin43ny42h5" path="res://component/scene/dialogue_system_narrator.gd" id="10_fng3k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nnip"]
 bg_color = Color(0, 0, 0, 0.678431)
@@ -32,7 +33,6 @@ offset_bottom = 1098.0
 texture = ExtResource("1_acmd8")
 
 [node name="DialogueSystem" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("1_bokd7")
 
 [node name="Panel" type="Panel" parent="DialogueSystem"]
@@ -101,7 +101,8 @@ texture = ExtResource("8_36lxq")
 stream = ExtResource("5_7qemn")
 
 [node name="DialogueSystem_Narrator" type="CanvasLayer" parent="DialogueSystem"]
-script = ExtResource("1_bokd7")
+visible = false
+script = ExtResource("10_fng3k")
 
 [node name="Panel" type="Panel" parent="DialogueSystem/DialogueSystem_Narrator"]
 offset_left = 313.0

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://vohwvhb2vt"]
 
-[ext_resource type="Script" uid="uid://dgf76o3p7px1q" path="res://main menu/credit_scene.gd" id="1_5oxck"]
+[ext_resource type="Script" path="res://main menu/credit_scene.gd" id="1_5oxck"]
 [ext_resource type="Texture2D" uid="uid://1n86vd3e0arn" path="res://VideoClip/intro/cave 0.png" id="1_et48k"]
-[ext_resource type="Texture2D" uid="uid://fg8bhhe0wasw" path="res://main menu/WhatsApp Image 2026-02-06 at 18.57.17.jpeg" id="2_np6xk"]
+[ext_resource type="Texture2D" uid="uid://42h83a7gbxii" path="res://main menu/foto bingkai (2).png" id="3_5oxck"]
 [ext_resource type="Texture2D" uid="uid://dslgfljmgaxdd" path="res://main menu/Tambahkan subjudul (6).png" id="3_np6xk"]
 
 [sub_resource type="Animation" id="Animation_5puke"]
@@ -75,9 +75,9 @@ texture = ExtResource("1_et48k")
 centered = false
 
 [node name="koran" type="Sprite2D" parent="."]
-position = Vector2(435, 532)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("2_np6xk")
+position = Vector2(417.818, 543.446)
+scale = Vector2(0.408168, 0.408168)
+texture = ExtResource("3_5oxck")
 
 [node name="credit" type="Sprite2D" parent="."]
 position = Vector2(1351, 2050)
