@@ -42,6 +42,7 @@ radius = 15.0
 radius = 14.3178
 
 [node name="Wolf_Straight" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_hcouq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

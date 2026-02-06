@@ -20,9 +20,8 @@ func _physics_process(_delta):
 		return
 
 	if Input.is_action_just_pressed("forward"):
+		sprite.play("forward")
 		move(Vector2.UP)
-	elif Input.is_action_just_pressed("back"):
-		move(Vector2.DOWN)
 
 func move(direction: Vector2):
 	is_moving = true
@@ -45,3 +44,9 @@ func freeze_character():
 	print("Daughter membeku di garis finish!")
 	# Kamu bisa tambah animasi menang di sini, misal:
 	# sprite.play("win_pose")
+	
+func crash():
+	$Scream.play()
+	await get_tree().create_timer(0.25).timeout
+	$Crash.play()
+	
