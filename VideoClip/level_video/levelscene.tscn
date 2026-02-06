@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://f8v6l80ve8i8"]
+[gd_scene load_steps=15 format=3 uid="uid://f8v6l80ve8i8"]
 
 [ext_resource type="Script" uid="uid://j0qo4ytd5cmi" path="res://VideoClip/level_video/levelscene.gd" id="1_kc5oi"]
-[ext_resource type="Texture2D" uid="uid://bhmhxcnuxnnec" path="res://VideoClip/outro/5.png" id="2_0x5a5"]
-[ext_resource type="Texture2D" uid="uid://d3u26p38fjdni" path="res://VideoClip/outro/4.png" id="3_5viis"]
-[ext_resource type="Texture2D" uid="uid://dl26h5we40qpr" path="res://VideoClip/outro/3.png" id="4_8uw0q"]
-[ext_resource type="Texture2D" uid="uid://dj2fh44h1ogxw" path="res://VideoClip/outro/2.png" id="5_rsu03"]
-[ext_resource type="Texture2D" uid="uid://cbplbanknu4b8" path="res://VideoClip/outro/1.png" id="6_44175"]
+[ext_resource type="Texture2D" uid="uid://dv8h784q6pqs5" path="res://VideoClip/level_video/lbrother.png" id="2_8uw0q"]
+[ext_resource type="Texture2D" uid="uid://cqp5lx464dd2n" path="res://VideoClip/level_video/mom.png" id="3_8uw0q"]
+[ext_resource type="Texture2D" uid="uid://ccj340okbqn6s" path="res://VideoClip/level_video/outro4.png" id="3_kc5oi"]
+[ext_resource type="Texture2D" uid="uid://ysc1ud52cm3f" path="res://VideoClip/level_video/outro3.png" id="4_0x5a5"]
+[ext_resource type="Texture2D" uid="uid://50bk5hc4n5kr" path="res://VideoClip/level_video/brother.png" id="4_rsu03"]
+[ext_resource type="Texture2D" uid="uid://dmr0yrv5auqvf" path="res://VideoClip/level_video/outro2.png" id="5_5viis"]
+[ext_resource type="Texture2D" uid="uid://ilxpsfito01s" path="res://VideoClip/level_video/dad3.png" id="5_44175"]
+[ext_resource type="Texture2D" uid="uid://jlbruwvp7iy5" path="res://VideoClip/level_video/outro1.png" id="6_8uw0q"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fdvuj"]
 
@@ -65,28 +68,36 @@ _data = {
 [node name="Levelscene" type="Node2D"]
 script = ExtResource("1_kc5oi")
 
+[node name="8" type="Sprite2D" parent="."]
+texture = ExtResource("2_8uw0q")
+centered = false
+
+[node name="7" type="Sprite2D" parent="."]
+texture = ExtResource("3_8uw0q")
+centered = false
+
 [node name="6" type="Sprite2D" parent="."]
-texture = ExtResource("2_0x5a5")
+texture = ExtResource("4_rsu03")
 centered = false
 
 [node name="5" type="Sprite2D" parent="."]
-texture = ExtResource("2_0x5a5")
+texture = ExtResource("5_44175")
 centered = false
 
 [node name="4" type="Sprite2D" parent="."]
-texture = ExtResource("3_5viis")
+texture = ExtResource("3_kc5oi")
 centered = false
 
 [node name="3" type="Sprite2D" parent="."]
-texture = ExtResource("4_8uw0q")
+texture = ExtResource("4_0x5a5")
 centered = false
 
 [node name="2" type="Sprite2D" parent="."]
-texture = ExtResource("5_rsu03")
+texture = ExtResource("5_5viis")
 centered = false
 
 [node name="1" type="Sprite2D" parent="."]
-texture = ExtResource("6_44175")
+texture = ExtResource("6_8uw0q")
 centered = false
 
 [node name="fade" type="TextureRect" parent="."]
