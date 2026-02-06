@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bsblfki7wboa"]
+[gd_scene load_steps=27 format=4 uid="uid://bsblfki7wboa"]
 
 [ext_resource type="Script" path="res://Level_1_Banana/level_1_banana.gd" id="1_aq61y"]
 [ext_resource type="PackedScene" uid="uid://cgag6is8jlers" path="res://Level_1_Banana/father.tscn" id="1_tnf70"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Level_1_Banana/cloud_2.gd" id="11_278gi"]
 [ext_resource type="Texture2D" uid="uid://dhwmbmjh3np3l" path="res://Level_1_Banana/asset/background/3.png" id="12_bl0vw"]
 [ext_resource type="FontFile" uid="uid://cj7ko0lo5lgvl" path="res://component/assets/Minecraft.ttf" id="14_bl0vw"]
+[ext_resource type="Script" uid="uid://cfwvafqd1kkwx" path="res://Level_1_Banana/button.gd" id="15_smhex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxaub"]
 texture = ExtResource("3_fxaub")
@@ -4049,7 +4050,7 @@ tile_size = Vector2i(35, 35)
 sources/1 = SubResource("TileSetAtlasSource_aq61y")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq61y"]
-size = Vector2(109, 216)
+size = Vector2(109, 1369)
 
 [sub_resource type="Animation" id="Animation_bl0vw"]
 tracks/0/type = "value"
@@ -4062,7 +4063,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_conax"]
@@ -4097,8 +4098,7 @@ position = Vector2(-2118, -186)
 
 [node name="CandyCave" type="Sprite2D" parent="Father/Camera2D"]
 z_index = 10
-position = Vector2(1, 7)
-scale = Vector2(1.4, 1.4)
+position = Vector2(-5, -2)
 texture = ExtResource("3_conax")
 
 [node name="Banana" parent="." instance=ExtResource("2_oktci")]
@@ -4139,7 +4139,7 @@ tile_set = SubResource("TileSet_h5gtg")
 position = Vector2(3138, 815)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(-1.5, -61)
+position = Vector2(-1.5, -637.5)
 shape = SubResource("RectangleShape2D_aq61y")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -4204,16 +4204,17 @@ offset_bottom = 550.0
 scale = Vector2(4, 4)
 theme_override_fonts/font = ExtResource("14_bl0vw")
 text = "RESTART"
+script = ExtResource("15_smhex")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 visible = false
-offset_left = 710.0
-offset_top = 972.0
-offset_right = 960.0
-offset_bottom = 995.0
+offset_left = 242.0
+offset_top = 964.0
+offset_right = 578.0
+offset_bottom = 987.0
 scale = Vector2(5, 5)
 theme_override_fonts/font = ExtResource("14_bl0vw")
-text = "TRY TO KICK BANANA INSTEAD	"
+text = "TRY TO KICK OR PASS BANANA INSTEAD	"
 
 [connection signal="body_entered" from="Banana" to="." method="_on_banana_body_entered"]
 [connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]

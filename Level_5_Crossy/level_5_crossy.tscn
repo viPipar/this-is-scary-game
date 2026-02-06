@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1pihhhtmdn35"]
+[gd_scene load_steps=14 format=3 uid="uid://1pihhhtmdn35"]
 
 [ext_resource type="Script" uid="uid://dqle4q7iqanbb" path="res://Level_5_Crossy/level_5_crossy.gd" id="1_cuy7m"]
 [ext_resource type="PackedScene" uid="uid://cpcnxb024bmhu" path="res://Level_5_Crossy/daughter.tscn" id="1_gkvoc"]
@@ -6,15 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://dnm078ak7b3qg" path="res://Level_5_Crossy/wolf_straight.tscn" id="3_w4avn"]
 [ext_resource type="Script" uid="uid://dk32s8yk8n5fy" path="res://Level_5_Crossy/finish.gd" id="5_r01hs"]
 [ext_resource type="Texture2D" uid="uid://b2c711tlc70bs" path="res://Level_5_Crossy/asset/sprite/floor grass.png" id="5_t8u0g"]
+[ext_resource type="Texture2D" uid="uid://dijbyy16j60xj" path="res://Level_5_Crossy/asset/background/tree 1.png" id="7_vxew2"]
+[ext_resource type="Texture2D" uid="uid://dwckxafls7xne" path="res://Level_5_Crossy/asset/background/tree 2.png" id="8_oqi0f"]
+[ext_resource type="Texture2D" uid="uid://v1c8wkmulpi6" path="res://Level_5_Crossy/asset/background/tree 3.png" id="9_gojpv"]
+[ext_resource type="Texture2D" uid="uid://bt4gt5nfaqo5y" path="res://Level_5_Crossy/asset/background/floor 3.png" id="10_dmlic"]
+[ext_resource type="Texture2D" uid="uid://c6da0hptknhvb" path="res://Level_5_Crossy/asset/sprite/bk_cars1.a.png" id="11_gojpv"]
+[ext_resource type="Script" uid="uid://bg0qlxy73xf7j" path="res://Level_5_Crossy/car.gd" id="12_dmlic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8u0g"]
-size = Vector2(2810, 128.75)
+size = Vector2(2812.5, 111.251)
 
 [node name="Level5_Crossy" type="Node2D"]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_cuy7m")
 
 [node name="Daughter" parent="." instance=ExtResource("1_gkvoc")]
+z_index = 3
 position = Vector2(896, 679)
 scale = Vector2(2, 2)
 
@@ -42,7 +49,8 @@ position = Vector2(86.25, -4241.25)
 script = ExtResource("5_r01hs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(967.5, -4860)
+position = Vector2(962.5, -4942.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t8u0g")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -53,6 +61,40 @@ motion_mirroring = Vector2(0, 1080)
 [node name="FloorGrass" type="Sprite2D" parent="ParallaxBackground/Floor"]
 position = Vector2(708, 533)
 texture = ExtResource("5_t8u0g")
+
+[node name="Tree1" type="Sprite2D" parent="."]
+position = Vector2(886.25, -320)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_vxew2")
+metadata/_edit_group_ = true
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(887.5, -1671.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("8_oqi0f")
+metadata/_edit_group_ = true
+
+[node name="Tree3" type="Sprite2D" parent="."]
+position = Vector2(887.5, -3012.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("9_gojpv")
+metadata/_edit_group_ = true
+
+[node name="Floor3" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(916.25, -4356.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("10_dmlic")
+
+[node name="Car" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-555, -4850)
+rotation = 1.5708
+scale = Vector2(5, 5)
+texture = ExtResource("11_gojpv")
+region_enabled = true
+region_rect = Rect2(189, 11.5, 52, 104)
+script = ExtResource("12_dmlic")
 
 [connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]
