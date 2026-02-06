@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	var direction = player.global_position - global_position
 
 	if direction.length() > 800:
-		direction = direction.normalized() * 1.2
+		direction = direction.normalized() * 1.1
 		velocity = direction * speed
 	elif direction.length() > 100:
 		direction = direction.normalized()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq55vywemaahn"]
 
 [ext_resource type="Script" uid="uid://detbh4yiouk0a" path="res://Level 3/scene/rolling_stone.gd" id="1_p7jxt"]
-[ext_resource type="Texture2D" uid="uid://8va4e3i2u74w" path="res://Level 3/assets/enemy.jpg" id="1_w4agj"]
+[ext_resource type="Texture2D" uid="uid://midee10akaou" path="res://Level 3/assets/batuuu.png" id="2_p7jxt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p7jxt"]
 radius = 304.37
@@ -10,8 +10,9 @@ radius = 304.37
 script = ExtResource("1_p7jxt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_w4agj")
+position = Vector2(-668, 368)
+scale = Vector2(0.924762, 0.924762)
+texture = ExtResource("2_p7jxt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.4, 0.4)
