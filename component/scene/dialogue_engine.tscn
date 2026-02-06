@@ -25,6 +25,7 @@ corner_radius_bottom_left = 25
 [node name="DialogueEngine" type="Node2D"]
 
 [node name="Placeholder BG" type="TextureRect" parent="."]
+visible = false
 offset_top = 18.0
 offset_right = 1920.0
 offset_bottom = 1098.0
