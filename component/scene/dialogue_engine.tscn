@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=3 uid="uid://do2cu7bo4b2v4"]
+
+[ext_resource type="Texture2D" uid="uid://c8p18qx84sjbh" path="res://component/assets/dialogue_engine/floor grass.png" id="1_acmd8"]
+[ext_resource type="Script" uid="uid://cmfjulkmy51jc" path="res://component/scene/dialogue_system.gd" id="1_bokd7"]
+[ext_resource type="FontFile" uid="uid://cj7ko0lo5lgvl" path="res://component/assets/Minecraft.ttf" id="3_7qemn"]
+[ext_resource type="Texture2D" uid="uid://2oj1y6p8tbxm" path="res://component/assets/dialogue_engine/portrait_0005_Dad.png" id="4_435cm"]
+[ext_resource type="Texture2D" uid="uid://dfkfakpco2v6v" path="res://component/assets/dialogue_engine/portrait_0001_Brother.png" id="4_q7hfe"]
+[ext_resource type="AudioStream" uid="uid://cllbhjmwb56of" path="res://component/assets/dialogue_engine/father_blip.wav" id="5_7qemn"]
+[ext_resource type="Texture2D" uid="uid://un4biktxfkq6" path="res://component/assets/dialogue_engine/portrait_0002_Mother.png" id="5_fng3k"]
+[ext_resource type="Texture2D" uid="uid://bpbetgx2tmftp" path="res://component/assets/dialogue_engine/portrait_0004_Son.png" id="7_tk1ru"]
+[ext_resource type="Texture2D" uid="uid://cal5n3rvo82m5" path="res://component/assets/dialogue_engine/portrait_0003_Daughter.png" id="8_36lxq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nnip"]
+bg_color = Color(0, 0, 0, 0.678431)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="DialogueEngine" type="Node2D"]
+
+[node name="Placeholder BG" type="TextureRect" parent="."]
+offset_top = 18.0
+offset_right = 1920.0
+offset_bottom = 1098.0
+texture = ExtResource("1_acmd8")
+
+[node name="DialogueSystem" type="CanvasLayer" parent="."]
+script = ExtResource("1_bokd7")
+
+[node name="Panel" type="Panel" parent="DialogueSystem"]
+offset_left = 313.0
+offset_top = 721.0
+offset_right = 1580.0
+offset_bottom = 1022.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nnip")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueSystem/Panel"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 1225.0
+offset_bottom = 241.0
+theme_override_constants/line_separation = 32
+theme_override_fonts/normal_font = ExtResource("3_7qemn")
+theme_override_font_sizes/normal_font_size = 56
+text = "aduh enak banget bangke"
+
+[node name="Father" type="TextureRect" parent="DialogueSystem/Panel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -83.0
+offset_right = 397.0
+offset_bottom = 296.0
+texture = ExtResource("4_435cm")
+
+[node name="Mother" type="TextureRect" parent="DialogueSystem/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = -83.0
+offset_right = 397.0
+offset_bottom = 296.0
+texture = ExtResource("5_fng3k")
+
+[node name="Elder Brother" type="TextureRect" parent="DialogueSystem/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = -83.0
+offset_right = 397.0
+offset_bottom = 296.0
+texture = ExtResource("4_q7hfe")
+
+[node name="Little Brother" type="TextureRect" parent="DialogueSystem/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = -83.0
+offset_right = 397.0
+offset_bottom = 296.0
+texture = ExtResource("7_tk1ru")
+
+[node name="Sister" type="TextureRect" parent="DialogueSystem/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = -83.0
+offset_right = 397.0
+offset_bottom = 296.0
+texture = ExtResource("8_36lxq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="DialogueSystem"]
+stream = ExtResource("5_7qemn")

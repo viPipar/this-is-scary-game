@@ -24,6 +24,7 @@ distance = -1618.0
 normal = Vector2(-1, 0)
 
 [node name="Level" type="Node2D"]
+position = Vector2(0, -9)
 
 [node name="Node2D" parent="." instance=ExtResource("5_6klga")]
 scroll_offset = Vector2(1423, -88)

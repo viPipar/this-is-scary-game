@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cgag6is8jlers"]
 
-[ext_resource type="Script" uid="uid://bkk5yxbfdcado" path="res://this-is-scary-game/Level_1_Banana/father.gd" id="1_ouscw"]
-[ext_resource type="Texture2D" uid="uid://qcmsxdcyd07b" path="res://icon.svg" id="1_v7ymb"]
-[ext_resource type="Texture2D" uid="uid://rogncsch46l1" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6326-removebg-preview.png" id="3_re75f"]
-[ext_resource type="Texture2D" uid="uid://cdyw8ks448rrm" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6328-removebg-preview.png" id="4_c5ub3"]
-[ext_resource type="Texture2D" uid="uid://c5i4yhl4wq3cl" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6329-removebg-preview.png" id="5_8tcb7"]
+[ext_resource type="Script" uid="uid://bkk5yxbfdcado" path="res://Level_1_Banana/father.gd" id="1_ouscw"]
+[ext_resource type="Texture2D" uid="uid://dm33m0xulxw5l" path="res://icon.svg" id="1_v7ymb"]
+[ext_resource type="Texture2D" uid="uid://rogncsch46l1" path="res://Level_1_Banana/asset/sprite/walk/IMG_6326-removebg-preview.png" id="3_re75f"]
+[ext_resource type="Texture2D" uid="uid://cdyw8ks448rrm" path="res://Level_1_Banana/asset/sprite/walk/IMG_6328-removebg-preview.png" id="4_c5ub3"]
+[ext_resource type="Texture2D" uid="uid://c5i4yhl4wq3cl" path="res://Level_1_Banana/asset/sprite/walk/IMG_6329-removebg-preview.png" id="5_8tcb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6hbr"]
 size = Vector2(73, 201)

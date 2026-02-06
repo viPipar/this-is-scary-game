@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqqljfkwcnyl2"]
 
-[ext_resource type="Script" uid="uid://26ej8cr6e5wt" path="res://this-is-scary-game/Level_1_Banana/banana.gd" id="1_ut1y4"]
-[ext_resource type="Texture2D" uid="uid://xg4mdsx4if70" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/banana.png" id="2_s1r52"]
-[ext_resource type="Script" uid="uid://dy21sasbwvuc8" path="res://this-is-scary-game/Level_1_Banana/scan_area.gd" id="3_qxsi6"]
+[ext_resource type="Script" uid="uid://26ej8cr6e5wt" path="res://Level_1_Banana/banana.gd" id="1_ut1y4"]
+[ext_resource type="Texture2D" uid="uid://xg4mdsx4if70" path="res://Level_1_Banana/asset/sprite/banana.png" id="2_s1r52"]
+[ext_resource type="Script" uid="uid://dy21sasbwvuc8" path="res://Level_1_Banana/scan_area.gd" id="3_qxsi6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i43f3"]
 size = Vector2(30, 30)
