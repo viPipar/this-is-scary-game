@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cpuyvdupk2lpe" path="res://Level 2/scene/camera_3d.gd" id="5_11hpx"]
 [ext_resource type="Texture2D" uid="uid://85bdm3bcnlo4" path="res://Level 2/assets/level_2_walk_3x4_280x537.png" id="6_x17xp"]
 [ext_resource type="Texture2D" uid="uid://cif1if2tok8k7" path="res://GuideScreen/Guide2.png" id="8_0wv84"]
-[ext_resource type="Script" uid="uid://dmaegesm5bvup" path="res://Level 2/scene/sprite_2d.gd" id="9_leryg"]
+[ext_resource type="Script" path="res://Level 2/scene/sprite_2d.gd" id="9_leryg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ysd6"]
 shading_mode = 0

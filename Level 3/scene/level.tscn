@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dq55vywemaahn" path="res://Level 3/scene/rolling_stone.tscn" id="6_1f2np"]
 [ext_resource type="Script" uid="uid://b2qna1vk6p8uh" path="res://Level 3/scene/finish_line.gd" id="6_mlnhx"]
 [ext_resource type="Script" uid="uid://bvjx2roqmal0k" path="res://Level 3/scene/rolling_stone_spawner.gd" id="7_1f2np"]
-[ext_resource type="Script" path="res://Level 3/scene/label.gd" id="8_l083i"]
+[ext_resource type="Script" uid="uid://bg7xsq6sttynn" path="res://Level 3/scene/label.gd" id="8_l083i"]
 [ext_resource type="Texture2D" uid="uid://cwvvjebjbopeg" path="res://GuideScreen/Guide3.png" id="9_2pssu"]
-[ext_resource type="Script" uid="uid://cbp0vkt63uxju" path="res://Level 3/scene/sprite_2d.gd" id="10_sxvhj"]
+[ext_resource type="Script" path="res://Level 3/scene/sprite_2d.gd" id="10_sxvhj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6klga"]
 normal = Vector2(-1, 0)
