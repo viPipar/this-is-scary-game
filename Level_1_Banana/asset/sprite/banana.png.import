@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xg4mdsx4if70"
-path="res://.godot/imported/banana.png-0bab78d5e4fc7c86dae27dcf0aebba20.ctex"
+path="res://.godot/imported/banana.png-a0b6a2fe4fd439d34d81740c7e2395ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://this-is-scary-game/Level_1_Banana/asset/sprite/banana.png"
-dest_files=["res://.godot/imported/banana.png-0bab78d5e4fc7c86dae27dcf0aebba20.ctex"]
+source_file="res://Level_1_Banana/asset/sprite/banana.png"
+dest_files=["res://.godot/imported/banana.png-a0b6a2fe4fd439d34d81740c7e2395ab.ctex"]
 
 [params]
 

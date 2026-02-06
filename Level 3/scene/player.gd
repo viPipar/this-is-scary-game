@@ -10,9 +10,9 @@ func _physics_process(delta: float) -> void:
 		direction.x += 1
 	if Input.is_action_pressed("left"):
 		direction.x -= 1
-	if Input.is_action_pressed("down"):
+	if Input.is_action_pressed("back"):
 		direction.y += 1
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("forward"):
 		direction.y -= 1
 
 	# Biar kecepatan diagonal tetap konsisten
@@ -21,3 +21,8 @@ func _physics_process(delta: float) -> void:
 
 	velocity = direction * SPEED
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		print("aduh kena")

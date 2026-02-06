@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csxnuqnbeugh1"
-path="res://.godot/imported/sheet (3).png-db55067de0cb99cbc7ae545533d386f1.ctex"
+path="res://.godot/imported/sheet (3).png-c53b48a042801bbffd8f947b2a56c79a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://this-is-scary-game/Level_1_Banana/asset/tileset/sheet (3).png"
-dest_files=["res://.godot/imported/sheet (3).png-db55067de0cb99cbc7ae545533d386f1.ctex"]
+source_file="res://Level_1_Banana/asset/tileset/sheet (3).png"
+dest_files=["res://.godot/imported/sheet (3).png-c53b48a042801bbffd8f947b2a56c79a.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5rqh40i6qm4k"
-path="res://.godot/imported/flagYellow.png-e3271c32b53b0fe3f1cf44cc54a24cf5.ctex"
+path="res://.godot/imported/flagYellow.png-95d5a4c4aacff1970e5924ef29451a04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://this-is-scary-game/Level_1_Banana/asset/tileset/decor/flagYellow.png"
-dest_files=["res://.godot/imported/flagYellow.png-e3271c32b53b0fe3f1cf44cc54a24cf5.ctex"]
+source_file="res://Level_1_Banana/asset/tileset/decor/flagYellow.png"
+dest_files=["res://.godot/imported/flagYellow.png-95d5a4c4aacff1970e5924ef29451a04.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
+@export var speed: float = 125.0
 @export var player_path: NodePath
 
 var player: CharacterBody2D
@@ -14,9 +14,12 @@ func _physics_process(delta: float) -> void:
 
 	var direction = player.global_position - global_position
 
-	if direction.length() > 50:
+	if direction.length() > 800:
 		direction = direction.normalized()
-		velocity = direction * speed
+		velocity = direction * speed * 1.2
+	elif direction.length() > 100:
+		direction = direction.normalized()
+		velocity = direction * speed 
 	else:
 		velocity = Vector2.ZERO
 

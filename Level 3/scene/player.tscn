@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://djs42we40krh3"]
+[gd_scene load_steps=5 format=3 uid="uid://djs42we40krh3"]
 
-[ext_resource type="Texture2D" uid="uid://xfc1jmqlbgim" path="res://level 3/assets/umaru.jpg" id="1_3y0lq"]
-[ext_resource type="Script" uid="uid://b4tm07yea8n83" path="res://level 3/scene/player.gd" id="1_ok53t"]
+[ext_resource type="Texture2D" uid="uid://xfc1jmqlbgim" path="res://Level 3/assets/umaru.jpg" id="1_3y0lq"]
+[ext_resource type="Script" uid="uid://b4tm07yea8n83" path="res://Level 3/scene/player.gd" id="1_ok53t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ok53t"]
 size = Vector2(255, 195)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke6xq"]
+size = Vector2(259, 199)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_ok53t")
 
@@ -17,3 +20,11 @@ texture = ExtResource("1_3y0lq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_ok53t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ke6xq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

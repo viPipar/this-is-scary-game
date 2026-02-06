@@ -1,22 +1,85 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbfek65jaigdl"]
+[gd_scene load_steps=13 format=3 uid="uid://cbfek65jaigdl"]
 
-[ext_resource type="Texture2D" uid="uid://fhksswu4thqn" path="res://level 3/assets/background.jpeg" id="1_kqr2j"]
-[ext_resource type="PackedScene" uid="uid://djs42we40krh3" path="res://level 3/scene/player.tscn" id="2_vg2w1"]
-[ext_resource type="Script" uid="uid://vfrevgeywqwp" path="res://level 3/scene/camera_2d.gd" id="2_xf4iq"]
-[ext_resource type="PackedScene" uid="uid://yju3qekuw203" path="res://level 3/scene/enemy.tscn" id="3_i3waq"]
+[ext_resource type="PackedScene" uid="uid://djs42we40krh3" path="res://Level 3/scene/player.tscn" id="2_vg2w1"]
+[ext_resource type="Script" uid="uid://vfrevgeywqwp" path="res://Level 3/scene/camera_2d.gd" id="2_xf4iq"]
+[ext_resource type="PackedScene" uid="uid://yju3qekuw203" path="res://Level 3/scene/enemy.tscn" id="3_i3waq"]
+[ext_resource type="PackedScene" uid="uid://cmjp5e8dxvokw" path="res://Level 3/scene/nyoba parallax.tscn" id="5_6klga"]
+[ext_resource type="PackedScene" uid="uid://dq55vywemaahn" path="res://Level 3/scene/rolling_stone.tscn" id="6_1f2np"]
+[ext_resource type="Script" uid="uid://b2qna1vk6p8uh" path="res://Level 3/scene/finish_line.gd" id="6_mlnhx"]
+[ext_resource type="Script" uid="uid://bvjx2roqmal0k" path="res://Level 3/scene/rolling_stone_spawner.gd" id="7_1f2np"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6klga"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mlnhx"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1f2np"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l083i"]
+distance = -1618.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2pssu"]
+normal = Vector2(-1, 0)
 
 [node name="Level" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(4.21389, 1.04439)
-texture = ExtResource("1_kqr2j")
+[node name="Node2D" parent="." instance=ExtResource("5_6klga")]
+scroll_offset = Vector2(1423, -88)
 
-[node name="enemy" parent="." instance=ExtResource("3_i3waq")]
-position = Vector2(-897, -354)
-player_path = NodePath("../Player")
+[node name="enemy" type="Node2D" parent="."]
+
+[node name="enemy1" parent="enemy" instance=ExtResource("3_i3waq")]
+position = Vector2(422, 579)
+player_path = NodePath("../../Player")
+
+[node name="enemy2" parent="enemy" instance=ExtResource("3_i3waq")]
+position = Vector2(408, 1033)
+player_path = NodePath("../../Player")
+
+[node name="enemy3" parent="enemy" instance=ExtResource("3_i3waq")]
+position = Vector2(823, 177)
+player_path = NodePath("../../Player")
+
+[node name="enemy4" parent="enemy" instance=ExtResource("3_i3waq")]
+position = Vector2(923, 1412)
+player_path = NodePath("../../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_vg2w1")]
+position = Vector2(1361, 743)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.4, 0.4)
+limit_top = 0
+limit_bottom = 1600
 script = ExtResource("2_xf4iq")
+
+[node name="finish line" type="Area2D" parent="."]
+position = Vector2(-4040, 286)
+script = ExtResource("6_mlnhx")
+
+[node name="finish line collision" type="CollisionShape2D" parent="finish line"]
+position = Vector2(12992, 595)
+shape = SubResource("WorldBoundaryShape2D_6klga")
+
+[node name="world boundaries" type="StaticBody2D" parent="."]
+
+[node name="world boundaries collision1" type="CollisionShape2D" parent="world boundaries"]
+shape = SubResource("WorldBoundaryShape2D_mlnhx")
+
+[node name="world boundaries collision3" type="CollisionShape2D" parent="world boundaries"]
+shape = SubResource("WorldBoundaryShape2D_1f2np")
+
+[node name="world boundaries collision4" type="CollisionShape2D" parent="world boundaries"]
+shape = SubResource("WorldBoundaryShape2D_l083i")
+
+[node name="world boundaries collision5" type="CollisionShape2D" parent="world boundaries"]
+position = Vector2(9170, 92)
+shape = SubResource("WorldBoundaryShape2D_2pssu")
+
+[node name="rolling_stone_spawner" type="Node2D" parent="."]
+script = ExtResource("7_1f2np")
+rolling_stone_scene = ExtResource("6_1f2np")
+
+[connection signal="body_entered" from="finish line" to="finish line" method="_on_body_entered"]
