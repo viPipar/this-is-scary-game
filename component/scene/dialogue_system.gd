@@ -3,11 +3,11 @@ extends CanvasLayer
 @onready var audio = $AudioStreamPlayer
 
 # GANTI INI COY
-var dialog_text = "aduh enak banget bangke"
+var dialog_text = "You will slip."
 
 # Default settings
-var default_speed: float = 0.064
-var current_speed: float = 0.064
+var default_speed: float = 0.3
+var current_speed: float = 0.3
 var default_audio_sample: AudioStream = null # You can set a default in the inspector
 
 # Regex to find your tags like <speed:0.1>
