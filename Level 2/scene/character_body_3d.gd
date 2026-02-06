@@ -71,3 +71,8 @@ func trigger_fall_trap():
 		sprite.rotation_degrees = Vector3(0, 90, 0)
 		
 		sprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		print("menang")

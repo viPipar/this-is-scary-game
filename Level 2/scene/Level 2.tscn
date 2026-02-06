@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b028pm2i341ra"]
+[gd_scene load_steps=15 format=3 uid="uid://b028pm2i341ra"]
 
-[ext_resource type="Texture2D" uid="uid://cxrvh7tc78pgu" path="res://this-is-scary-game/Level 2/assets/istockphoto-865924416-612x612.jpg" id="1_odmrk"]
-[ext_resource type="Texture2D" uid="uid://206cnqcw3g1" path="res://this-is-scary-game/Level 2/assets/pngtree-illustration-of-ground-hole-png-image_8559985.png" id="2_11hpx"]
-[ext_resource type="Script" uid="uid://cs2olsvxgvh7d" path="res://this-is-scary-game/Level 2/scene/character_body_3d.gd" id="3_sboqp"]
-[ext_resource type="Texture2D" uid="uid://ugqhoqba1wlm" path="res://this-is-scary-game/Level 2/assets/New Project (43).png" id="4_0q22f"]
-[ext_resource type="Script" uid="uid://cpuyvdupk2lpe" path="res://this-is-scary-game/Level 2/scene/camera_3d.gd" id="5_11hpx"]
+[ext_resource type="Texture2D" uid="uid://cxrvh7tc78pgu" path="res://Level 2/assets/istockphoto-865924416-612x612.jpg" id="1_odmrk"]
+[ext_resource type="Texture2D" uid="uid://206cnqcw3g1" path="res://Level 2/assets/pngtree-illustration-of-ground-hole-png-image_8559985.png" id="2_11hpx"]
+[ext_resource type="Script" uid="uid://cs2olsvxgvh7d" path="res://Level 2/scene/character_body_3d.gd" id="3_sboqp"]
+[ext_resource type="Texture2D" uid="uid://ugqhoqba1wlm" path="res://Level 2/assets/New Project (43).png" id="4_0q22f"]
+[ext_resource type="Script" uid="uid://cpuyvdupk2lpe" path="res://Level 2/scene/camera_3d.gd" id="5_11hpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ysd6"]
 shading_mode = 0
@@ -19,6 +19,20 @@ shading_mode = 0
 albedo_texture = ExtResource("1_odmrk")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_210q2"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g60g1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g60g1"]
+size = Vector3(0.19812, 1, 16.1949)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7n832"]
+size = Vector3(10.3932, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x17xp"]
+size = Vector3(1, 1.41113, 15.6219)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wv84"]
+size = Vector3(15.4486, 3.8114, 0.654919)
 
 [node name="Main" type="Node3D"]
 
@@ -45,7 +59,7 @@ size = Vector3(4.50757, 1, 10.7148)
 transform = Transform3D(1.885, 0, 0, 0, -8.2396e-08, 1.885, 0, -1.885, -8.2396e-08, 0.0354665, 4.97375, -1.74114)
 texture = ExtResource("2_11hpx")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["player"]]
 script = ExtResource("3_sboqp")
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
@@ -67,3 +81,29 @@ size = 11.85
 transform = Transform3D(-3.97376e-08, 0.416598, 0.909091, 1.82101e-08, 0.909091, -0.416598, -1, 0, -4.37114e-08, 16.2269, -9.49953, -4.39127)
 size = 9.05
 script = ExtResource("5_11hpx")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -10.3154)
+shape = SubResource("WorldBoundaryShape3D_g60g1")
+
+[node name="Node3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11367, 4.96535, -3.28081)
+shape = SubResource("BoxShape3D_g60g1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0665131, 5.05196, 5.26932)
+shape = SubResource("BoxShape3D_7n832")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45694, 4.90721, -2.89818)
+shape = SubResource("BoxShape3D_x17xp")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21967, 6.10905, -10.672)
+shape = SubResource("BoxShape3D_0wv84")
+
+[connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
