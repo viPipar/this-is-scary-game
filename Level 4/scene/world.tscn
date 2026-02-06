@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3uf0hsbc2bho"]
+[gd_scene load_steps=15 format=3 uid="uid://c3uf0hsbc2bho"]
 
 [ext_resource type="Texture2D" uid="uid://ixtsjfviol0r" path="res://Level 4/assets/background.jpeg" id="1_vfwvd"]
 [ext_resource type="PackedScene" uid="uid://2qgw4vs38vym" path="res://Level 4/scene/player.tscn" id="2_53mi8"]
@@ -207,10 +207,58 @@ tracks/0/path = NodePath("../player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.5, 2.83, 4.01, 4.55, 6.91, 8.74),
+"times": PackedFloat32Array(1.5, 2.83, 4.01, 4.55, 6.91, 8.74, 8.9, 9.06667, 9.2, 9.36667, 9.52667, 9.69333, 9.82667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(971, 488), Vector2(969, 707), Vector2(823, 908), Vector2(930.578, 913.484), Vector2(1018, 321), Vector2(1007, 49), Vector2(972, 119), Vector2(1056, 135), Vector2(1005, 94), Vector2(1007, 49), Vector2(972, 119), Vector2(1056, 135), Vector2(1005, 94)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../enemy/enemy1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.82779, 3.88991, 5.51852, 7.17055, 8.74058),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(971, 488), Vector2(969, 707), Vector2(823, 908), Vector2(930.578, 913.484), Vector2(1018, 321), Vector2(1007, 49)]
+"values": [Vector2(-1582, -708), Vector2(-622, -708), Vector2(-540, -38), Vector2(-478, 204), Vector2(-380, -116), Vector2(-298, -702)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../enemy/enemy2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.82779, 3.88991, 5.51852, 7.17055, 8.74058),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1546, 944), Vector2(-974, 882), Vector2(-728, 882), Vector2(-374, 762), Vector2(-148, 270), Vector2(-136, -404)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../enemy/enemy3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.82779, 3.88991, 5.51852, 7.17055, 8.74058),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1632, -682), Vector2(810, -616), Vector2(560, -348), Vector2(436, -134), Vector2(464, -290), Vector2(452, -710)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../enemy/enemy4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.82779, 3.88991, 5.51852, 7.17055, 8.74058),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1634, 930), Vector2(780, 860), Vector2(506, 716), Vector2(326, 614), Vector2(330, 88), Vector2(206, -414)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_88i74"]
@@ -220,6 +268,14 @@ _data = {
 &"hide": SubResource("Animation_88i74"),
 &"run": SubResource("Animation_3siuc")
 }
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3siuc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88i74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_es6rd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6k70"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -282,8 +338,56 @@ root_node = NodePath("../script pause")
 libraries = {
 &"": SubResource("AnimationLibrary_88i74")
 }
-autoplay = "hide"
 
-[node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="run" type="Button" parent="CanvasLayer"]
+offset_left = 895.0
+offset_top = 347.0
+offset_right = 938.0
+offset_bottom = 378.0
+scale = Vector2(3.10502, 3.10502)
+text = "RUN"
+
+[node name="hide" type="Button" parent="CanvasLayer"]
+offset_left = 887.0
+offset_top = 452.0
+offset_right = 933.0
+offset_bottom = 483.0
+scale = Vector2(3.37863, 3.37863)
+text = "HIDE"
+
+[node name="fight" type="Button" parent="CanvasLayer"]
+offset_left = 881.0
+offset_top = 563.0
+offset_right = 936.0
+offset_bottom = 594.0
+scale = Vector2(3.20809, 3.20809)
+text = "FIGHT"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 750.0
+offset_top = 932.0
+offset_right = 907.0
+offset_bottom = 955.0
+scale = Vector2(2.83881, 2.83881)
+text = "CHOOSE "
+
+[node name="carefully" type="Button" parent="CanvasLayer"]
+offset_left = 934.0
+offset_top = 921.0
+offset_right = 1030.0
+offset_bottom = 952.0
+scale = Vector2(2.81221, 2.81221)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3siuc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_88i74")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_es6rd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s6k70")
+text = "CAREFULLY"
+flat = true
+
+[connection signal="pressed" from="CanvasLayer/run" to="script pause" method="_on_run_pressed"]
+[connection signal="pressed" from="CanvasLayer/hide" to="script pause" method="_on_hide_pressed"]
+[connection signal="pressed" from="CanvasLayer/fight" to="script pause" method="_on_fight_pressed"]
+[connection signal="pressed" from="CanvasLayer/carefully" to="script pause" method="_on_carefully_pressed"]
