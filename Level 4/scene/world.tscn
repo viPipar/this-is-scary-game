@@ -291,6 +291,9 @@ centered = false
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
+[node name="player" parent="." instance=ExtResource("2_53mi8")]
+position = Vector2(971, 488)
+
 [node name="batu" type="Node2D" parent="."]
 position = Vector2(579, 760)
 scale = Vector2(0.5, 0.5)
@@ -329,9 +332,6 @@ player_path = NodePath("../../player")
 position = Vector2(1556, 868)
 scale = Vector2(1, 1)
 player_path = NodePath("../../player")
-
-[node name="player" parent="." instance=ExtResource("2_53mi8")]
-position = Vector2(971, 488)
 
 [node name="script pause" type="Node2D" parent="."]
 process_mode = 3

@@ -22,7 +22,7 @@ func _on_hide_pressed() -> void:
 	get_tree().paused = false
 	anim.play("hide")
 	canvas.visible = false
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(12.0).timeout
 	get_tree().paused = true
 	canvas.visible = true
 	hide.queue_free()
@@ -39,4 +39,5 @@ func _on_fight_pressed() -> void:
 
 
 func _on_carefully_pressed() -> void:
-	print("menang")
+	get_tree().paused = false
+	SceneTransition.change_scene("res://Level_5_Crossy/level_5_crossy.tscn")
