@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3uf0hsbc2bho"]
+[gd_scene load_steps=16 format=3 uid="uid://c3uf0hsbc2bho"]
 
-[ext_resource type="Texture2D" uid="uid://ixtsjfviol0r" path="res://Level 4/assets/background.jpeg" id="1_vfwvd"]
+[ext_resource type="Texture2D" uid="uid://dkgsmvlgbilla" path="res://Level 4/assets/candy floor.png" id="1_es6rd"]
 [ext_resource type="PackedScene" uid="uid://2qgw4vs38vym" path="res://Level 4/scene/player.tscn" id="2_53mi8"]
+[ext_resource type="Texture2D" uid="uid://7las1p14wu1x" path="res://Level 4/assets/candy cave.png" id="2_88i74"]
 [ext_resource type="PackedScene" uid="uid://2vk3rys6pdod" path="res://Level 4/scene/enemy.tscn" id="3_a21vo"]
 [ext_resource type="PackedScene" uid="uid://bu3sqyyit87k3" path="res://Level 4/scene/batu.tscn" id="4_pj5e4"]
 [ext_resource type="Script" uid="uid://bi3an1tqxuv8f" path="res://Level 4/scene/node_2d.gd" id="6_es6rd"]
@@ -281,8 +282,11 @@ _data = {
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(962, 544)
-scale = Vector2(2.701, 0.677431)
-texture = ExtResource("1_vfwvd")
+texture = ExtResource("1_es6rd")
+
+[node name="CandyCave" type="Sprite2D" parent="."]
+texture = ExtResource("2_88i74")
+centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -372,6 +376,7 @@ offset_top = 932.0
 offset_right = 907.0
 offset_bottom = 955.0
 scale = Vector2(2.83881, 2.83881)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "CHOOSE "
 
 [node name="carefully" type="Button" parent="CanvasLayer"]
@@ -380,6 +385,7 @@ offset_top = 921.0
 offset_right = 1030.0
 offset_bottom = 952.0
 scale = Vector2(2.81221, 2.81221)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3siuc")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_88i74")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_es6rd")
