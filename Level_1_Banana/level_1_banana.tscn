@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=4 uid="uid://bsblfki7wboa"]
 
-[ext_resource type="Script" path="res://Level_1_Banana/level_1_banana.gd" id="1_aq61y"]
+[ext_resource type="Script" uid="uid://c2lwygwpky8no" path="res://Level_1_Banana/level_1_banana.gd" id="1_aq61y"]
 [ext_resource type="PackedScene" uid="uid://cgag6is8jlers" path="res://Level_1_Banana/father.tscn" id="1_tnf70"]
 [ext_resource type="PackedScene" uid="uid://cqqljfkwcnyl2" path="res://Level_1_Banana/banana.tscn" id="2_oktci"]
 [ext_resource type="Texture2D" uid="uid://bk6nd1tb62vgv" path="res://Level_1_Banana/asset/tileset/sheet (2).png" id="3_4eaks"]

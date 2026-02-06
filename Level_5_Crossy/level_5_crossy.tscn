@@ -50,7 +50,6 @@ script = ExtResource("5_r01hs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(962.5, -4942.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t8u0g")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
