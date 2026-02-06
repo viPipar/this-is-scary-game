@@ -85,6 +85,7 @@ script = ExtResource("7_1f2np")
 rolling_stone_scene = ExtResource("6_1f2np")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 process_mode = 3

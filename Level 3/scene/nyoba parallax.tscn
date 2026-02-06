@@ -1,15 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmjp5e8dxvokw"]
 
-[ext_resource type="Texture2D" uid="uid://dsdlpoyq77vg7" path="res://Level 3/assets/303610-P8C3KK-355.png" id="1_xh85y"]
+[ext_resource type="Texture2D" uid="uid://b248ywfbldlo7" path="res://Level 3/assets/candy floor.png" id="1_xh85y"]
 
 [node name="Node2D" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 texture_repeat = 2
-motion_mirroring = Vector2(10000, 0)
+motion_scale = Vector2(1.16, 1.16)
+motion_mirroring = Vector2(5250, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxLayer"]
 texture_repeat = 2
-scale = Vector2(5.507, 1.6945)
+scale = Vector2(2.747, 3.027)
 texture = ExtResource("1_xh85y")
 centered = false
