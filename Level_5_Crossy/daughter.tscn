@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpcnxb024bmhu"]
 
-[ext_resource type="Script" uid="uid://cvsd0l25r3r2t" path="res://this-is-scary-game/Level_5_Crossy/daughter.gd" id="1_ai23i"]
-[ext_resource type="Texture2D" uid="uid://rogncsch46l1" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6326-removebg-preview.png" id="2_rdujo"]
-[ext_resource type="Texture2D" uid="uid://dksjthxbm23jl" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6327-removebg-preview.png" id="3_n3l0h"]
-[ext_resource type="Texture2D" uid="uid://cdyw8ks448rrm" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6328-removebg-preview.png" id="4_aex0p"]
-[ext_resource type="Texture2D" uid="uid://c5i4yhl4wq3cl" path="res://this-is-scary-game/Level_1_Banana/asset/sprite/walk/IMG_6329-removebg-preview.png" id="5_li4ms"]
+[ext_resource type="Script" uid="uid://cvsd0l25r3r2t" path="res://Level_5_Crossy/daughter.gd" id="1_ai23i"]
+[ext_resource type="Texture2D" uid="uid://rogncsch46l1" path="res://Level_1_Banana/asset/sprite/walk/IMG_6326-removebg-preview.png" id="2_rdujo"]
+[ext_resource type="Texture2D" uid="uid://dksjthxbm23jl" path="res://Level_1_Banana/asset/sprite/walk/IMG_6327-removebg-preview.png" id="3_n3l0h"]
+[ext_resource type="Texture2D" uid="uid://cdyw8ks448rrm" path="res://Level_1_Banana/asset/sprite/walk/IMG_6328-removebg-preview.png" id="4_aex0p"]
+[ext_resource type="Texture2D" uid="uid://c5i4yhl4wq3cl" path="res://Level_1_Banana/asset/sprite/walk/IMG_6329-removebg-preview.png" id="5_li4ms"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3m14"]
-size = Vector2(120, 118)
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7a60"]
+radius = 37.4833
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lqm5i"]
 animations = [{
@@ -34,7 +34,7 @@ script = ExtResource("1_ai23i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_c3m14")
+shape = SubResource("CircleShape2D_a7a60")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7, -14)

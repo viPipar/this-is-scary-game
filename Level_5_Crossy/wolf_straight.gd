@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # --- KONFIGURASI BATAS & KECEPATAN ---
-@export var speed = 100.0
+@export var speed = 350.0
 @export var limit_left = -200.0   # Batas Kiri
 @export var limit_right = 2000.0  # Batas Kanan
 
@@ -43,3 +43,8 @@ func update_animation():
 			anim.flip_h = false # Hadap Kanan
 		else:
 			anim.flip_h = true  # Hadap Kiri
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Daughter":
+		print("Daughter died!")

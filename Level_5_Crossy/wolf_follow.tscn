@@ -1,29 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://dymc6ap6w6fi4"]
+[gd_scene load_steps=9 format=3 uid="uid://dymc6ap6w6fi4"]
 
-[ext_resource type="Texture2D" uid="uid://qcmsxdcyd07b" path="res://icon.svg" id="1_5ei88"]
-[ext_resource type="Script" uid="uid://bvppupkq3trfv" path="res://this-is-scary-game/Level_5_Crossy/wolf_follow.gd" id="1_eh8vt"]
+[ext_resource type="Script" uid="uid://bvppupkq3trfv" path="res://Level_5_Crossy/wolf_follow.gd" id="1_eh8vt"]
+[ext_resource type="Texture2D" uid="uid://2qh6kypshms3" path="res://Level_5_Crossy/asset/sprite/german shepherd bigger  battler.png" id="2_x1mb6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dkce"]
+atlas = ExtResource("2_x1mb6")
+region = Rect2(1200, 0, 200, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4uxg"]
+atlas = ExtResource("2_x1mb6")
+region = Rect2(1400, 0, 200, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wgmt"]
+atlas = ExtResource("2_x1mb6")
+region = Rect2(1600, 0, 200, 142)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eh8vt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_5ei88")
+"texture": SubResource("AtlasTexture_8dkce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4uxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wgmt")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 5.0
+"name": &"running",
+"speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe67i"]
-size = Vector2(118, 121)
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1mb6"]
+radius = 32.0156
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dkce"]
 
 [node name="Wolf_Follow" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_eh8vt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-18, -0.5)
 sprite_frames = SubResource("SpriteFrames_eh8vt")
-animation = &"idle"
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.155502
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_fe67i")
+position = Vector2(1, 26.5)
+shape = SubResource("CircleShape2D_x1mb6")
+
+[node name="Area2D" type="Area2D" parent="." groups=["death"]]
+position = Vector2(-18, -0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18, -6)
+shape = SubResource("CircleShape2D_8dkce")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

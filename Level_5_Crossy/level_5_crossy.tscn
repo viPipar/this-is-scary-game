@@ -1,25 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://1pihhhtmdn35"]
+[gd_scene load_steps=8 format=3 uid="uid://1pihhhtmdn35"]
 
-[ext_resource type="PackedScene" uid="uid://cpcnxb024bmhu" path="res://this-is-scary-game/Level_5_Crossy/daughter.tscn" id="1_gkvoc"]
-[ext_resource type="PackedScene" uid="uid://dymc6ap6w6fi4" path="res://this-is-scary-game/Level_5_Crossy/wolf_follow.tscn" id="2_xhqlm"]
-[ext_resource type="PackedScene" uid="uid://dnm078ak7b3qg" path="res://this-is-scary-game/Level_5_Crossy/wolf_straight.tscn" id="3_w4avn"]
+[ext_resource type="Script" uid="uid://dqle4q7iqanbb" path="res://Level_5_Crossy/level_5_crossy.gd" id="1_cuy7m"]
+[ext_resource type="PackedScene" uid="uid://cpcnxb024bmhu" path="res://Level_5_Crossy/daughter.tscn" id="1_gkvoc"]
+[ext_resource type="PackedScene" uid="uid://dymc6ap6w6fi4" path="res://Level_5_Crossy/wolf_follow.tscn" id="2_xhqlm"]
+[ext_resource type="PackedScene" uid="uid://dnm078ak7b3qg" path="res://Level_5_Crossy/wolf_straight.tscn" id="3_w4avn"]
+[ext_resource type="Script" uid="uid://dk32s8yk8n5fy" path="res://Level_5_Crossy/finish.gd" id="5_r01hs"]
+[ext_resource type="Texture2D" uid="uid://b2c711tlc70bs" path="res://Level_5_Crossy/asset/sprite/floor grass.png" id="5_t8u0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8u0g"]
+size = Vector2(2810, 128.75)
 
 [node name="Level5_Crossy" type="Node2D"]
 scale = Vector2(0.8, 0.8)
+script = ExtResource("1_cuy7m")
 
 [node name="Daughter" parent="." instance=ExtResource("1_gkvoc")]
 position = Vector2(896, 679)
+scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Daughter"]
 
 [node name="Wolf_Follow" parent="." instance=ExtResource("2_xhqlm")]
-position = Vector2(737.5, 1377.5)
+position = Vector2(451.25, 1310)
 
 [node name="Wolf_Follow2" parent="." instance=ExtResource("2_xhqlm")]
-position = Vector2(938.75, 1233.75)
+position = Vector2(943.75, 1493.75)
 
 [node name="Wolf_Follow3" parent="." instance=ExtResource("2_xhqlm")]
-position = Vector2(1113.75, 1340)
+position = Vector2(1442.5, 1271.25)
 
 [node name="Wolf_Straight" parent="." instance=ExtResource("3_w4avn")]
 position = Vector2(90, -1912.5)
@@ -29,3 +37,22 @@ position = Vector2(1577.5, -3470)
 
 [node name="Wolf_Straight3" parent="." instance=ExtResource("3_w4avn")]
 position = Vector2(86.25, -4241.25)
+
+[node name="Finish" type="Area2D" parent="."]
+script = ExtResource("5_r01hs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2(967.5, -4860)
+shape = SubResource("RectangleShape2D_t8u0g")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Floor" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 1080)
+
+[node name="FloorGrass" type="Sprite2D" parent="ParallaxBackground/Floor"]
+position = Vector2(708, 533)
+texture = ExtResource("5_t8u0g")
+
+[connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]
+[connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]

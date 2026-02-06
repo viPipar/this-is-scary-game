@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnm078ak7b3qg"]
+
+[ext_resource type="Script" uid="uid://dmx1ya0mxc24t" path="res://Level_5_Crossy/wolf_straight.gd" id="1_hcouq"]
+[ext_resource type="Texture2D" uid="uid://bmwq6hapgr8xt" path="res://Level_5_Crossy/asset/sprite/Bat_0000_dark.png" id="2_rovmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc2w2"]
+atlas = ExtResource("2_rovmf")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvmek"]
+atlas = ExtResource("2_rovmf")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wpiu"]
+atlas = ExtResource("2_rovmf")
+region = Rect2(1200, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcouq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc2w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvmek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wpiu")
+}],
+"loop": true,
+"name": &"running",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvmek"]
+radius = 22.002
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rovmf"]
+radius = 13.2242
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fc2w2"]
+radius = 11.6619
+
+[node name="Bat_Straight" type="CharacterBody2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_hcouq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hcouq")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.437115
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_kvmek")
+
+[node name="Area2D" type="Area2D" parent="." groups=["death"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(30, 2)
+shape = SubResource("CircleShape2D_rovmf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-14.8, 0)
+shape = SubResource("CircleShape2D_fc2w2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

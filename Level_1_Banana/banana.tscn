@@ -5,19 +5,23 @@
 [ext_resource type="Script" uid="uid://dy21sasbwvuc8" path="res://Level_1_Banana/scan_area.gd" id="3_qxsi6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i43f3"]
-size = Vector2(30, 30)
+size = Vector2(48, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmhr5"]
-size = Vector2(20, 577)
+size = Vector2(20, 525)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1r52"]
-size = Vector2(34, 86)
+size = Vector2(34, 42)
 
 [node name="Banana" type="Area2D"]
 script = ExtResource("1_ut1y4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1)
+position = Vector2(25, -25)
+shape = SubResource("RectangleShape2D_i43f3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(25, -25)
 shape = SubResource("RectangleShape2D_i43f3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -29,17 +33,17 @@ region_enabled = true
 region_rect = Rect2(79.7824, 104.861, 410.68, 259.292)
 
 [node name="ScanArea" type="Area2D" parent="."]
-position = Vector2(2, -205)
+position = Vector2(0, -168)
 script = ExtResource("3_qxsi6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScanArea"]
-position = Vector2(0, -317.5)
+position = Vector2(1, -166.5)
 shape = SubResource("RectangleShape2D_pmhr5")
 
 [node name="PassArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PassArea"]
-position = Vector2(3, -39)
+position = Vector2(-18, -18)
 shape = SubResource("RectangleShape2D_s1r52")
 
 [connection signal="body_entered" from="ScanArea" to="." method="_on_scan_area_body_entered"]
