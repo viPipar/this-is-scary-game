@@ -1,7 +1,7 @@
 extends Sprite2D
 
 # Variabel kecepatan dan status
-var speed = 2000.0 
+var speed = 4000.0 
 var is_moving = false # Awalnya diam
 
 func _process(delta):
