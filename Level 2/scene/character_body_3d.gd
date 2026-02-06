@@ -80,7 +80,7 @@ func trigger_fall_trap():
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		print("menang")
+		SceneTransition.change_scene("res://Level 3/scene/level.tscn")
 
 
 func _on_restart_pressed() -> void:
