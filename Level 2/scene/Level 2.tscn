@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://b028pm2i341ra"]
+[gd_scene load_steps=16 format=3 uid="uid://b028pm2i341ra"]
 
+[ext_resource type="Texture2D" uid="uid://dupyi87oi06qb" path="res://Level 2/assets/floor grass.png" id="1_7n832"]
 [ext_resource type="Texture2D" uid="uid://cxrvh7tc78pgu" path="res://Level 2/assets/istockphoto-865924416-612x612.jpg" id="1_odmrk"]
 [ext_resource type="Texture2D" uid="uid://206cnqcw3g1" path="res://Level 2/assets/pngtree-illustration-of-ground-hole-png-image_8559985.png" id="2_11hpx"]
 [ext_resource type="Script" uid="uid://cs2olsvxgvh7d" path="res://Level 2/scene/character_body_3d.gd" id="3_sboqp"]
@@ -8,11 +9,11 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ysd6"]
 shading_mode = 0
-albedo_texture = ExtResource("1_odmrk")
+albedo_texture = ExtResource("1_7n832")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6c42x"]
 shading_mode = 0
-albedo_texture = ExtResource("1_odmrk")
+albedo_texture = ExtResource("1_7n832")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j55le"]
 shading_mode = 0
@@ -85,7 +86,7 @@ script = ExtResource("5_11hpx")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -10.3154)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -10.0461)
 shape = SubResource("WorldBoundaryShape3D_g60g1")
 
 [node name="Node3D" type="StaticBody3D" parent="."]
@@ -106,4 +107,16 @@ shape = SubResource("BoxShape3D_x17xp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21967, 6.10905, -10.672)
 shape = SubResource("BoxShape3D_0wv84")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="restart" type="Button" parent="CanvasLayer"]
+offset_left = 878.0
+offset_top = 510.0
+offset_right = 953.0
+offset_bottom = 541.0
+scale = Vector2(1.91668, 1.91668)
+text = "RESTART"
+
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
+[connection signal="pressed" from="CanvasLayer/restart" to="CharacterBody3D" method="_on_restart_pressed"]

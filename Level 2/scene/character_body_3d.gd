@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@onready var canvas: CanvasLayer = $"../CanvasLayer"
 
 # Reference to the sprite
 @onready var sprite = $Sprite3D
@@ -71,8 +72,16 @@ func trigger_fall_trap():
 		sprite.rotation_degrees = Vector3(0, 90, 0)
 		
 		sprite.billboard = BaseMaterial3D.BILLBOARD_DISABLED
+	
+	await get_tree().create_timer(2).timeout
+	canvas.visible = true
+	
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		print("menang")
+
+
+func _on_restart_pressed() -> void:
+	get_tree().reload_current_scene()
