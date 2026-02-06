@@ -2,11 +2,11 @@ extends Node2D
 
 @export var rolling_stone_scene: PackedScene
 @export var spawn_area_min := Vector2(3000, -300)
-@export var spawn_area_max := Vector2(6000, 0)
-@export var spawn_interval := 1.5
+@export var spawn_area_max := Vector2(26000, 0)
+@export var spawn_interval := 0.5
 @export var world_bounds := Rect2(
 	Vector2(0, -300),
-	Vector2(21000, 2700)
+	Vector2(15000, 2700)
 )
 
 

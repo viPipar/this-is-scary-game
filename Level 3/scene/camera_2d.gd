@@ -6,11 +6,12 @@ extends Camera2D
 @export var max_zoom := 2.0
 @onready var button : CanvasLayer = $"../../CanvasLayer"
 
-var counter := 1.0
+var counter := 0.0001
 
 func _physics_process(delta: float) -> void:
-	counter += 0.1
-	zoom += Vector2(auto_zoom_speed * counter, auto_zoom_speed * counter)
+	if counter < 0.0015:
+		counter += 0.00001
+	zoom += Vector2(auto_zoom_speed + counter, auto_zoom_speed + counter)
 	zoom.x = clamp(zoom.x, min_zoom, max_zoom)
 	zoom.y = clamp(zoom.y, min_zoom, max_zoom)
 	
