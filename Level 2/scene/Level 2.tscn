@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b028pm2i341ra"]
+[gd_scene load_steps=55 format=3 uid="uid://b028pm2i341ra"]
 
 [ext_resource type="Texture2D" uid="uid://dupyi87oi06qb" path="res://Level 2/assets/floor grass.png" id="1_7n832"]
 [ext_resource type="Texture2D" uid="uid://cxrvh7tc78pgu" path="res://Level 2/assets/istockphoto-865924416-612x612.jpg" id="1_odmrk"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bonobwymd57jp" path="res://Level 2/assets/level_2_idle_5x5_280x515.png" id="5_7n832"]
 [ext_resource type="Script" uid="uid://cpuyvdupk2lpe" path="res://Level 2/scene/camera_3d.gd" id="5_11hpx"]
 [ext_resource type="Texture2D" uid="uid://85bdm3bcnlo4" path="res://Level 2/assets/level_2_walk_3x4_280x537.png" id="6_x17xp"]
+[ext_resource type="Texture2D" uid="uid://cif1if2tok8k7" path="res://GuideScreen/Guide2.png" id="8_0wv84"]
+[ext_resource type="Script" uid="uid://dmaegesm5bvup" path="res://Level 2/scene/sprite_2d.gd" id="9_leryg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ysd6"]
 shading_mode = 0
@@ -486,6 +488,13 @@ offset_right = 953.0
 offset_bottom = 541.0
 scale = Vector2(1.91668, 1.91668)
 text = "RESTART"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+texture = ExtResource("8_0wv84")
+centered = false
+script = ExtResource("9_leryg")
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
 [connection signal="pressed" from="CanvasLayer/restart" to="CharacterBody3D" method="_on_restart_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c3uf0hsbc2bho"]
+[gd_scene load_steps=18 format=3 uid="uid://c3uf0hsbc2bho"]
 
 [ext_resource type="Texture2D" uid="uid://dkgsmvlgbilla" path="res://Level 4/assets/candy floor.png" id="1_es6rd"]
 [ext_resource type="PackedScene" uid="uid://2qgw4vs38vym" path="res://Level 4/scene/player.tscn" id="2_53mi8"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://2vk3rys6pdod" path="res://Level 4/scene/enemy.tscn" id="3_a21vo"]
 [ext_resource type="PackedScene" uid="uid://bu3sqyyit87k3" path="res://Level 4/scene/batu.tscn" id="4_pj5e4"]
 [ext_resource type="Script" uid="uid://bi3an1tqxuv8f" path="res://Level 4/scene/node_2d.gd" id="6_es6rd"]
+[ext_resource type="Texture2D" uid="uid://dt8jxb0eqsf7i" path="res://GuideScreen/Guide4.png" id="7_s6k70"]
+[ext_resource type="Script" uid="uid://bwveki54ryle1" path="res://Level 4/scene/sprite_2d.gd" id="8_33ocy"]
 
 [sub_resource type="Animation" id="Animation_es6rd"]
 length = 0.001
@@ -392,6 +394,13 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_es6rd")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_s6k70")
 text = "CAREFULLY"
 flat = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+texture = ExtResource("7_s6k70")
+centered = false
+script = ExtResource("8_33ocy")
 
 [connection signal="pressed" from="CanvasLayer/run" to="script pause" method="_on_run_pressed"]
 [connection signal="pressed" from="CanvasLayer/hide" to="script pause" method="_on_hide_pressed"]

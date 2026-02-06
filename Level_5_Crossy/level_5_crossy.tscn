@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://1pihhhtmdn35"]
+[gd_scene load_steps=18 format=3 uid="uid://1pihhhtmdn35"]
 
 [ext_resource type="Script" uid="uid://dqle4q7iqanbb" path="res://Level_5_Crossy/level_5_crossy.gd" id="1_cuy7m"]
 [ext_resource type="PackedScene" uid="uid://cpcnxb024bmhu" path="res://Level_5_Crossy/daughter.tscn" id="1_gkvoc"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://c6da0hptknhvb" path="res://Level_5_Crossy/asset/sprite/bk_cars1.a.png" id="11_gojpv"]
 [ext_resource type="Script" uid="uid://bg0qlxy73xf7j" path="res://Level_5_Crossy/car.gd" id="12_dmlic"]
 [ext_resource type="Texture2D" uid="uid://1um5mtjao8d0" path="res://Level_5_Crossy/asset/background/CAVE.png" id="13_dmlic"]
+[ext_resource type="Texture2D" uid="uid://bmo5k3qvvvmxj" path="res://GuideScreen/Guide5.png" id="14_0adw0"]
+[ext_resource type="Script" uid="uid://b6n7h2dkt38n2" path="res://Level_5_Crossy/sprite_2d.gd" id="15_8hgg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8u0g"]
 size = Vector2(5106.25, 111.251)
@@ -120,6 +122,13 @@ visible = false
 offset_right = 1665.0
 offset_bottom = 1079.0
 color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+texture = ExtResource("14_0adw0")
+centered = false
+script = ExtResource("15_8hgg0")
 
 [connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]

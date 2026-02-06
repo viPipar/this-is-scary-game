@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bsblfki7wboa"]
+[gd_scene load_steps=29 format=4 uid="uid://bsblfki7wboa"]
 
 [ext_resource type="Script" uid="uid://c2lwygwpky8no" path="res://Level_1_Banana/level_1_banana.gd" id="1_aq61y"]
 [ext_resource type="PackedScene" uid="uid://cgag6is8jlers" path="res://Level_1_Banana/father.tscn" id="1_tnf70"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dhwmbmjh3np3l" path="res://Level_1_Banana/asset/background/3.png" id="12_bl0vw"]
 [ext_resource type="FontFile" uid="uid://cj7ko0lo5lgvl" path="res://component/assets/Minecraft.ttf" id="14_bl0vw"]
 [ext_resource type="Script" uid="uid://cfwvafqd1kkwx" path="res://Level_1_Banana/button.gd" id="15_smhex"]
+[ext_resource type="Texture2D" uid="uid://c5jcnnu0sga" path="res://GuideScreen/Guide1.png" id="16_tyv7w"]
+[ext_resource type="Script" uid="uid://brttcl0kyjllk" path="res://Level_1_Banana/sprite_2d.gd" id="17_ljrlv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxaub"]
 texture = ExtResource("3_fxaub")
@@ -4215,6 +4217,13 @@ offset_bottom = 987.0
 scale = Vector2(5, 5)
 theme_override_fonts/font = ExtResource("14_bl0vw")
 text = "TRY TO KICK OR PASS BANANA INSTEAD	"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+texture = ExtResource("16_tyv7w")
+centered = false
+script = ExtResource("17_ljrlv")
 
 [connection signal="body_entered" from="Banana" to="." method="_on_banana_body_entered"]
 [connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]
