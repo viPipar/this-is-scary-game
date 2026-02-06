@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnm078ak7b3qg"]
+[gd_scene load_steps=10 format=3 uid="uid://ba156kj0wepy4"]
 
 [ext_resource type="Script" uid="uid://dmx1ya0mxc24t" path="res://Level_5_Crossy/wolf_straight.gd" id="1_hcouq"]
 [ext_resource type="Texture2D" uid="uid://bmwq6hapgr8xt" path="res://Level_5_Crossy/asset/sprite/Bat_0000_dark.png" id="2_rovmf"]
