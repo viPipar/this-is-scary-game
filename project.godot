@@ -30,6 +30,7 @@ window/size/resizable=false
 
 player=""
 enemy=""
+death=""
 
 [input]
 

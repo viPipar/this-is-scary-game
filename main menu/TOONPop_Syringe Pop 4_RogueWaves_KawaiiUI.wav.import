@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bajq5vmr6c6si"
+path="res://.godot/imported/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav-c5c06a46c2f295cf5cdcbd41ba0239ad.sample"
+
+[deps]
+
+source_file="res://main menu/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav"
+dest_files=["res://.godot/imported/TOONPop_Syringe Pop 4_RogueWaves_KawaiiUI.wav-c5c06a46c2f295cf5cdcbd41ba0239ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
