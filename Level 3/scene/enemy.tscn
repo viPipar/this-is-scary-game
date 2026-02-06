@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://yju3qekuw203"]
 
-[ext_resource type="Script" uid="uid://clw4ew7gmob14" path="res://Level 3/scene/enemy.gd" id="1_ymfo0"]
+[ext_resource type="Script" uid="uid://clw4ew7gmob14" path="res://Level 4/scene/enemy.gd" id="1_ymfo0"]
 [ext_resource type="Texture2D" uid="uid://d1hon2pnf6e65" path="res://Level 3/assets/cute_cannibal_3x4_363x308.png" id="2_tnisu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vn25"]

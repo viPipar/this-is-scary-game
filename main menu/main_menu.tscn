@@ -4,8 +4,6 @@
 [ext_resource type="FontFile" uid="uid://d5jatj3dm1v6" path="res://main menu/Minecraft.ttf" id="2_87j08"]
 [ext_resource type="Texture2D" uid="uid://1n86vd3e0arn" path="res://VideoClip/intro/cave 0.png" id="2_m48o8"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_m48o8"]
-
 [sub_resource type="Animation" id="Animation_m48o8"]
 resource_name = "zoom"
 
@@ -14,39 +12,42 @@ _data = {
 &"zoom": SubResource("Animation_m48o8")
 }
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_m48o8"]
+
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_cgb3b")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_m48o8")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0, 0, 0, 0.266667)
-offset_left = -174.0
-offset_top = -148.0
-offset_right = 209.0
-offset_bottom = 289.0
-scale = Vector2(0.879291, 1.2275)
-texture = SubResource("CanvasTexture_m48o8")
-
-[node name="Start" type="Button" parent="."]
+[node name="Start2" type="Button" parent="."]
 custom_minimum_size = Vector2(400, 100)
-offset_left = -200.0
-offset_top = -129.0
-offset_right = 200.0
-offset_bottom = -29.0
+offset_left = -194.0
+offset_top = -446.0
+offset_right = 206.0
+offset_bottom = -346.0
+scale = Vector2(0.989731, 1)
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.529412, 0.529412, 0.529412, 1)
 theme_override_fonts/font = ExtResource("2_87j08")
 theme_override_font_sizes/font_size = 50
-text = "Start"
+text = "redacted"
 flat = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Start"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Start2"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_ra13p")
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.266667)
+offset_left = -254.0
+offset_top = -150.0
+offset_right = 129.0
+offset_bottom = 287.0
+scale = Vector2(1.34761, 1.14347)
+texture = SubResource("CanvasTexture_m48o8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -57,9 +58,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -474.0
-offset_top = -184.0
+offset_top = -231.0
 offset_right = 476.0
-offset_bottom = 490.0
+offset_bottom = 443.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -67,6 +68,22 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
+
+[node name="Start" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.529412, 0.529412, 0.529412, 1)
+theme_override_fonts/font = ExtResource("2_87j08")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/GridContainer/Start"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ra13p")
+}
 
 [node name="How to Play" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(220, 100)
@@ -162,7 +179,7 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 flat = true
 
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/How to Play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Exit" to="." method="_on_exit_pressed"]

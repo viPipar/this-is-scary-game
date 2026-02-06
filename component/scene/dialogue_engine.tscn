@@ -31,6 +31,7 @@ offset_bottom = 1098.0
 texture = ExtResource("1_acmd8")
 
 [node name="DialogueSystem" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_bokd7")
 
 [node name="Panel" type="Panel" parent="DialogueSystem"]
@@ -96,4 +97,30 @@ offset_bottom = 296.0
 texture = ExtResource("8_36lxq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="DialogueSystem"]
+stream = ExtResource("5_7qemn")
+
+[node name="DialogueSystem_Narrator" type="CanvasLayer" parent="DialogueSystem"]
+script = ExtResource("1_bokd7")
+
+[node name="Panel" type="Panel" parent="DialogueSystem/DialogueSystem_Narrator"]
+offset_left = 313.0
+offset_top = 757.0
+offset_right = 1580.0
+offset_bottom = 1022.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nnip")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueSystem/DialogueSystem_Narrator/Panel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 46.0
+offset_right = 1244.0
+offset_bottom = 258.0
+theme_override_constants/line_separation = 32
+theme_override_fonts/normal_font = ExtResource("3_7qemn")
+theme_override_font_sizes/normal_font_size = 56
+text = "You will slip."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="DialogueSystem/DialogueSystem_Narrator"]
 stream = ExtResource("5_7qemn")
