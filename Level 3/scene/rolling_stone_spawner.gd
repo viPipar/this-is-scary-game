@@ -6,8 +6,9 @@ extends Node2D
 @export var spawn_interval := 1.5
 @export var world_bounds := Rect2(
 	Vector2(0, -300),
-	Vector2(6000, 1750)
+	Vector2(21000, 2700)
 )
+
 
 
 func _ready():

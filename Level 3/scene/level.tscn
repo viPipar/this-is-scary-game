@@ -18,10 +18,11 @@ normal = Vector2(0, 1)
 normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l083i"]
-distance = -1618.0
+distance = -2701.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2pssu"]
 normal = Vector2(-1, 0)
+distance = -12904.0
 
 [node name="Level" type="Node2D"]
 position = Vector2(0, -9)
@@ -32,28 +33,28 @@ scroll_offset = Vector2(1423, -88)
 [node name="enemy" type="Node2D" parent="."]
 
 [node name="enemy1" parent="enemy" instance=ExtResource("3_i3waq")]
-position = Vector2(422, 579)
+position = Vector2(-68, 727)
 player_path = NodePath("../../Player")
 
 [node name="enemy2" parent="enemy" instance=ExtResource("3_i3waq")]
-position = Vector2(408, 1033)
+position = Vector2(-9, 1973)
 player_path = NodePath("../../Player")
 
 [node name="enemy3" parent="enemy" instance=ExtResource("3_i3waq")]
-position = Vector2(823, 177)
+position = Vector2(1268, -110)
 player_path = NodePath("../../Player")
 
 [node name="enemy4" parent="enemy" instance=ExtResource("3_i3waq")]
-position = Vector2(923, 1412)
+position = Vector2(1338, 3341)
 player_path = NodePath("../../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_vg2w1")]
-position = Vector2(1361, 743)
+position = Vector2(2088, 1227)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.4, 0.4)
 limit_top = 0
-limit_bottom = 1600
+limit_bottom = 2700
 script = ExtResource("2_xf4iq")
 
 [node name="finish line" type="Area2D" parent="."]
@@ -61,7 +62,7 @@ position = Vector2(-4040, 286)
 script = ExtResource("6_mlnhx")
 
 [node name="finish line collision" type="CollisionShape2D" parent="finish line"]
-position = Vector2(12992, 595)
+position = Vector2(24975, 1303)
 shape = SubResource("WorldBoundaryShape2D_6klga")
 
 [node name="world boundaries" type="StaticBody2D" parent="."]
@@ -76,11 +77,30 @@ shape = SubResource("WorldBoundaryShape2D_1f2np")
 shape = SubResource("WorldBoundaryShape2D_l083i")
 
 [node name="world boundaries collision5" type="CollisionShape2D" parent="world boundaries"]
-position = Vector2(9170, 92)
+position = Vector2(8200, 744)
 shape = SubResource("WorldBoundaryShape2D_2pssu")
 
 [node name="rolling_stone_spawner" type="Node2D" parent="."]
 script = ExtResource("7_1f2np")
 rolling_stone_scene = ExtResource("6_1f2np")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -146.0
+offset_right = -75.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.17659, 4.17659)
+text = "RESTART"
+
 [connection signal="body_entered" from="finish line" to="finish line" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Button" to="Player" method="_on_button_pressed"]

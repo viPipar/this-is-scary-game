@@ -2,6 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 800.0
 
+@onready var button: CanvasLayer = $"../CanvasLayer"
+
+func _ready() -> void:
+	button.visible = false
+	get_tree().paused = false
+
 func _physics_process(delta: float) -> void:
 	var direction := Vector2.ZERO
 
@@ -40,4 +46,8 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		print("aduh kena")
-		get_tree().reload_current_scene()
+		get_tree().paused = true
+		button.visible = true
+
+func _on_button_pressed() -> void:
+	get_tree().reload_current_scene()
