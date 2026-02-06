@@ -79,6 +79,10 @@ func freeze_player(duration: float):
 	fall.play()
 	await get_tree().create_timer(0.5).timeout
 	boom.play()
+	$"../CanvasLayer".visible = true
+	$"../CanvasLayer/ColorRect/AnimationPlayer".play("restart_game")
 	await get_tree().create_timer(1.5).timeout
+	$"../CanvasLayer/Button".visible = true
+	$"../CanvasLayer/Label".visible = true
 	
 	modulate = Color(1, 1, 1)
