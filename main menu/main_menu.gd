@@ -8,7 +8,7 @@ func _on_how_to_play_pressed() -> void:
 	$Control.visible = !$Control.visible
 
 func _on_credit_pressed() -> void:
-	SceneTransition.change_scene("res://ui/ui_scene/splash_screen.tscn")
+	SceneTransition.change_scene("res://main menu/credit_scene.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
