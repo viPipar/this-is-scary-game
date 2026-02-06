@@ -1,0 +1,284 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3uf0hsbc2bho"]
+
+[ext_resource type="Texture2D" uid="uid://ixtsjfviol0r" path="res://Level 4/assets/background.jpeg" id="1_vfwvd"]
+[ext_resource type="PackedScene" uid="uid://2qgw4vs38vym" path="res://Level 4/scene/player.tscn" id="2_53mi8"]
+[ext_resource type="PackedScene" uid="uid://2vk3rys6pdod" path="res://Level 4/scene/enemy.tscn" id="3_a21vo"]
+[ext_resource type="PackedScene" uid="uid://bu3sqyyit87k3" path="res://Level 4/scene/batu.tscn" id="4_pj5e4"]
+[ext_resource type="Script" uid="uid://bi3an1tqxuv8f" path="res://Level 4/scene/node_2d.gd" id="6_es6rd"]
+
+[sub_resource type="Animation" id="Animation_3siuc"]
+resource_name = "run"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 2.83, 4.01, 4.55, 6.91, 8.74),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(971, 488), Vector2(969, 707), Vector2(823, 908), Vector2(930.578, 913.484), Vector2(1018, 321), Vector2(1007, 49)]
+}
+
+[sub_resource type="Animation" id="Animation_es6rd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(971, 488)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../enemy/enemy1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1582, -708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../enemy/enemy2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1538, 816)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../enemy/enemy3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1488, -740)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../enemy/enemy4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1556, 868)]
+}
+
+[sub_resource type="Animation" id="Animation_88i74"]
+resource_name = "hide"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2.78),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(971, 488), Vector2(1375, 545)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../enemy/enemy1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.36667, 3.9, 5.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1582, -708), Vector2(-892, -730), Vector2(-218, -318), Vector2(512, -148)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../enemy/enemy2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.06667, 3, 4.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1538, 816), Vector2(-790, 862), Vector2(-400, 606), Vector2(500, 194)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../enemy/enemy3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.26667, 3.36667, 4.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1488, -740), Vector2(1080, -608), Vector2(814, -396), Vector2(884, -244)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../enemy/enemy4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.76667, 3.76667, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1556, 868), Vector2(922, 734), Vector2(822, 524), Vector2(828, 446)]
+}
+
+[sub_resource type="Animation" id="Animation_s6k70"]
+resource_name = "fight"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.84, 4.99533, 5.12638, 5.30428, 5.46428, 5.59533, 5.74467, 5.9, 6.03105, 6.20895, 6.36895, 6.51362, 6.66895, 6.8, 6.9779, 7.1379, 7.26895, 7.44467, 7.6, 7.73105, 7.90895, 8.06895, 8.21133, 8.36667, 8.49772, 8.67562, 8.83562, 8.96667, 9.11133, 9.26667, 9.39772, 9.57562, 9.73562, 9.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../enemy/enemy1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.06, 3.26, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1582, -708), Vector2(-1232, 4), Vector2(-506, 40), Vector2(-312, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../enemy/enemy2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.9, 3.14, 4.43, 4.66),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1540, 884), Vector2(-800, 838), Vector2(-278, 754), Vector2(-8, 370), Vector2(-2, 260)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../enemy/enemy3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.9, 3.18, 4.24, 4.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1488, -740), Vector2(766, -614), Vector2(64, -566), Vector2(-6, -306), Vector2(6, -270)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../enemy/enemy4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.74, 3.13, 4.21, 5.17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1556, 868), Vector2(1330, 54), Vector2(884, -244), Vector2(434, -176), Vector2(332, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_88i74"]
+_data = {
+&"RESET": SubResource("Animation_es6rd"),
+&"fight": SubResource("Animation_s6k70"),
+&"hide": SubResource("Animation_88i74"),
+&"run": SubResource("Animation_3siuc")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(962, 544)
+scale = Vector2(2.701, 0.677431)
+texture = ExtResource("1_vfwvd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="batu" type="Node2D" parent="."]
+position = Vector2(579, 760)
+scale = Vector2(0.5, 0.5)
+
+[node name="batu1" parent="batu" instance=ExtResource("4_pj5e4")]
+position = Vector2(1592, -426)
+scale = Vector2(1, 1)
+
+[node name="batu2" parent="batu" instance=ExtResource("4_pj5e4")]
+position = Vector2(-120, -954)
+scale = Vector2(1, 1)
+
+[node name="batu3" parent="batu" instance=ExtResource("4_pj5e4")]
+scale = Vector2(1, 1)
+
+[node name="enemy" type="Node2D" parent="."]
+position = Vector2(971, 488)
+scale = Vector2(0.5, 0.5)
+
+[node name="enemy1" parent="enemy" instance=ExtResource("3_a21vo")]
+position = Vector2(-1582, -708)
+scale = Vector2(1, 1)
+player_path = NodePath("../../player")
+
+[node name="enemy2" parent="enemy" instance=ExtResource("3_a21vo")]
+position = Vector2(-1538, 816)
+scale = Vector2(1, 1)
+player_path = NodePath("../../player")
+
+[node name="enemy3" parent="enemy" instance=ExtResource("3_a21vo")]
+position = Vector2(1488, -740)
+scale = Vector2(1, 1)
+player_path = NodePath("../../player")
+
+[node name="enemy4" parent="enemy" instance=ExtResource("3_a21vo")]
+position = Vector2(1556, 868)
+scale = Vector2(1, 1)
+player_path = NodePath("../../player")
+
+[node name="player" parent="." instance=ExtResource("2_53mi8")]
+position = Vector2(971, 488)
+
+[node name="script pause" type="Node2D" parent="."]
+process_mode = 3
+script = ExtResource("6_es6rd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../script pause")
+libraries = {
+&"": SubResource("AnimationLibrary_88i74")
+}

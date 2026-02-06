@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu3sqyyit87k3"]
+
+[ext_resource type="Texture2D" uid="uid://bwllbtcqimpc0" path="res://Level 4/assets/umaru.jpg" id="1_7smwh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ludyv"]
+radius = 124.101
+
+[node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ludyv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7smwh")
