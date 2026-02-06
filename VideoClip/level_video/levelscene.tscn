@@ -65,6 +65,10 @@ _data = {
 [node name="Levelscene" type="Node2D"]
 script = ExtResource("1_kc5oi")
 
+[node name="6" type="Sprite2D" parent="."]
+texture = ExtResource("2_0x5a5")
+centered = false
+
 [node name="5" type="Sprite2D" parent="."]
 texture = ExtResource("2_0x5a5")
 centered = false
