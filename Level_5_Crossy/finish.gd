@@ -7,7 +7,7 @@ func _on_body_entered(body: Node2D) -> void:
 	# Pastikan nama node di Scene Tree benar-benar "Daughter" atau gunakan Group
 	if body.name == "Daughter":
 		print("Finish tersentuh!")
-		
+		SceneTransition.change_scene("res://VideoClip/level_video/levelscene.tscn")
 		# Cek apakah script Daughter punya fungsi 'freeze_character'
 	# Cek apakah kita sudah memasukkan node Car di Inspector?
 		if car_object != null:
