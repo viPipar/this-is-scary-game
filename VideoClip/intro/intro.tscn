@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://ccn6qhlbb8yyi"]
+
+[ext_resource type="Texture2D" uid="uid://d0defsvej54xy" path="res://VideoClip/intro/cave 2.png" id="1_ipbwg"]
+[ext_resource type="Script" uid="uid://cr60nigggw600" path="res://VideoClip/intro/intro.gd" id="1_tj5j3"]
+[ext_resource type="Texture2D" uid="uid://tk7yqybyibym" path="res://VideoClip/intro/cave 1.png" id="2_tj5j3"]
+[ext_resource type="Texture2D" uid="uid://1n86vd3e0arn" path="res://VideoClip/intro/cave 0.png" id="3_t6uy3"]
+[ext_resource type="Texture2D" uid="uid://cfbqs2jycwwbt" path="res://VideoClip/intro/butterfly.png" id="4_016ws"]
+[ext_resource type="Texture2D" uid="uid://dh18mn1q2flvq" path="res://VideoClip/intro/picnic.png" id="5_mocp1"]
+[ext_resource type="Texture2D" uid="uid://brjacll77les1" path="res://VideoClip/intro/car scene.png" id="6_ts2fc"]
+[ext_resource type="Texture2D" uid="uid://duemxqg5fsdri" path="res://VideoClip/intro/car pov out.png" id="7_ya0md"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rk2se"]
+
+[sub_resource type="Animation" id="Animation_wqw55"]
+resource_name = "video_transition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_27ayn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x8n2w"]
+resource_name = "end_video"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hog0"]
+_data = {
+&"RESET": SubResource("Animation_27ayn"),
+&"end_video": SubResource("Animation_x8n2w"),
+&"video_transition": SubResource("Animation_wqw55")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_tj5j3")
+
+[node name="7" type="Sprite2D" parent="."]
+texture = ExtResource("1_ipbwg")
+centered = false
+
+[node name="6" type="Sprite2D" parent="."]
+texture = ExtResource("2_tj5j3")
+centered = false
+
+[node name="5" type="Sprite2D" parent="."]
+texture = ExtResource("3_t6uy3")
+centered = false
+
+[node name="4" type="Sprite2D" parent="."]
+texture = ExtResource("4_016ws")
+centered = false
+
+[node name="3" type="Sprite2D" parent="."]
+texture = ExtResource("5_mocp1")
+centered = false
+
+[node name="2" type="Sprite2D" parent="."]
+texture = ExtResource("6_ts2fc")
+centered = false
+
+[node name="1" type="Sprite2D" parent="."]
+texture = ExtResource("7_ya0md")
+centered = false
+
+[node name="fade" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0)
+offset_right = 1969.0
+offset_bottom = 1127.0
+texture = SubResource("CanvasTexture_rk2se")
+
+[node name="fadeplay" type="AnimationPlayer" parent="fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_1hog0")
+}
