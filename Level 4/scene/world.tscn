@@ -6,22 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bu3sqyyit87k3" path="res://Level 4/scene/batu.tscn" id="4_pj5e4"]
 [ext_resource type="Script" uid="uid://bi3an1tqxuv8f" path="res://Level 4/scene/node_2d.gd" id="6_es6rd"]
 
-[sub_resource type="Animation" id="Animation_3siuc"]
-resource_name = "run"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../player:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1.5, 2.83, 4.01, 4.55, 6.91, 8.74),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(971, 488), Vector2(969, 707), Vector2(823, 908), Vector2(930.578, 913.484), Vector2(1018, 321), Vector2(1007, 49)]
-}
-
 [sub_resource type="Animation" id="Animation_es6rd"]
 length = 0.001
 tracks/0/type = "value"
@@ -83,6 +67,70 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1556, 868)]
+}
+
+[sub_resource type="Animation" id="Animation_s6k70"]
+resource_name = "fight"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.84, 4.99533, 5.12638, 5.30428, 5.46428, 5.59533, 5.74467, 5.9, 6.03105, 6.20895, 6.36895, 6.51362, 6.66895, 6.8, 6.9779, 7.1379, 7.26895, 7.44467, 7.6, 7.73105, 7.90895, 8.06895, 8.21133, 8.36667, 8.49772, 8.67562, 8.83562, 8.96667, 9.11133, 9.26667, 9.39772, 9.57562, 9.73562, 9.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../enemy/enemy1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.06, 3.26, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1582, -708), Vector2(-1232, 4), Vector2(-506, 40), Vector2(-312, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../enemy/enemy2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.9, 3.14, 4.43, 4.66),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1540, 884), Vector2(-800, 838), Vector2(-278, 754), Vector2(-8, 370), Vector2(-2, 260)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../enemy/enemy3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.9, 3.18, 4.24, 4.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1488, -740), Vector2(766, -614), Vector2(64, -566), Vector2(-6, -306), Vector2(6, -270)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../enemy/enemy4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.74, 3.13, 4.21, 5.17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1556, 868), Vector2(1330, 54), Vector2(884, -244), Vector2(434, -176), Vector2(332, -10)]
 }
 
 [sub_resource type="Animation" id="Animation_88i74"]
@@ -149,8 +197,8 @@ tracks/4/keys = {
 "values": [Vector2(1556, 868), Vector2(922, 734), Vector2(822, 524), Vector2(828, 446)]
 }
 
-[sub_resource type="Animation" id="Animation_s6k70"]
-resource_name = "fight"
+[sub_resource type="Animation" id="Animation_3siuc"]
+resource_name = "run"
 length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -159,58 +207,10 @@ tracks/0/path = NodePath("../player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(4.84, 4.99533, 5.12638, 5.30428, 5.46428, 5.59533, 5.74467, 5.9, 6.03105, 6.20895, 6.36895, 6.51362, 6.66895, 6.8, 6.9779, 7.1379, 7.26895, 7.44467, 7.6, 7.73105, 7.90895, 8.06895, 8.21133, 8.36667, 8.49772, 8.67562, 8.83562, 8.96667, 9.11133, 9.26667, 9.39772, 9.57562, 9.73562, 9.86667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.5, 2.83, 4.01, 4.55, 6.91, 8.74),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494), Vector2(973, 470), Vector2(969, 498), Vector2(1003, 494)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../enemy/enemy1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.06, 3.26, 4.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-1582, -708), Vector2(-1232, 4), Vector2(-506, 40), Vector2(-312, -2)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../enemy/enemy2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.9, 3.14, 4.43, 4.66),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-1540, 884), Vector2(-800, 838), Vector2(-278, 754), Vector2(-8, 370), Vector2(-2, 260)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../enemy/enemy3:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.9, 3.18, 4.24, 4.68),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1488, -740), Vector2(766, -614), Vector2(64, -566), Vector2(-6, -306), Vector2(6, -270)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../enemy/enemy4:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.74, 3.13, 4.21, 5.17),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1556, 868), Vector2(1330, 54), Vector2(884, -244), Vector2(434, -176), Vector2(332, -10)]
+"values": [Vector2(971, 488), Vector2(969, 707), Vector2(823, 908), Vector2(930.578, 913.484), Vector2(1018, 321), Vector2(1007, 49)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_88i74"]
@@ -282,3 +282,8 @@ root_node = NodePath("../script pause")
 libraries = {
 &"": SubResource("AnimationLibrary_88i74")
 }
+autoplay = "hide"
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
